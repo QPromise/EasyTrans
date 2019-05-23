@@ -1,5 +1,8 @@
-## EasyTrans
+# EasyTrans
 
+### 目的
+* 1. 看英文论文去各个翻译网站对比翻译结果的时间消耗。
+* 2. 下载翻译后的pdf以及word要花钱，如翻译狗，有道等。
 ### 实现
 * 基于django、PyMuPdf、谷歌、有道翻译实现了pdf英译汉的功能，翻译后的pdf格式基本保持不变，可以下载docx和pdf格式的翻译文档，简单的满足看论文以及写总结的需求。
 ### 环境 
@@ -34,7 +37,12 @@ sqlparse==0.3.0
 tzlocal==1.5.1
 urllib3==1.24.3
 wcwidth==0.1.7
-  ```
+```
 ### 展示
-![QX8X6}2AV{U8A$VUT$P9VN.png](https://i.loli.net/2019/05/22/5ce55ef2af53776320.png)
+![yasnhi1.gif](https://i.loli.net/2019/05/23/5ce6b013692cb50906.gif)
+![yasnhi2.gif](https://i.loli.net/2019/05/23/5ce6b2e134b8a26386.gif)
+![yasnhi.gif](https://i.loli.net/2019/05/23/5ce6af09b4dd645364.gif)
+### 参考文档
+[PyMuPDF参考文档](https://pymupdf.readthedocs.io/en/latest/)
 ### 使用方法
+
