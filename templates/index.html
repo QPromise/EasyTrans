@@ -7,7 +7,7 @@
     <title>layout 后台大布局 - Layui</title>
     <link rel="stylesheet" href="{% static 'layui/css/layui.css' %}">
 </head>
-<body class="layui-layout-body" style="font-size: larger">
+<body class="layui-layout-body" >
 <div class="layui-layout layui-layout-admin">
     <div class="layui-header">
         <div class="layui-logo" style="font-size: xx-large;font-family: Arial;">EasyTrans</div>
@@ -16,26 +16,26 @@
             <li class="layui-nav-item"><a href="#">本站公告</a></li>
             <li class="layui-nav-item"><a href="#">建议</a></li>
         </ul>
-        <ul class="layui-nav layui-layout-right">
-            <li class="layui-nav-item">
-                <a href="javascript:;">
-                    <img src="http://t.cn/RCzsdCq" class="layui-nav-img">
-                    登录
-                </a>
-                <dl class="layui-nav-child">
-                    <dd><a href="#">基本资料</a></dd>
-                    <dd><a href="#">安全设置</a></dd>
-                </dl>
-            </li>
-            <li class="layui-nav-item"><a href="#">退出</a></li>
-        </ul>
+        {#        <ul class="layui-nav layui-layout-right">#}
+        {#            <li class="layui-nav-item">#}
+        {#                <a href="javascript:;">#}
+        {#                    <img src="http://t.cn/RCzsdCq" class="layui-nav-img">#}
+        {#                    登录#}
+        {#                </a>#}
+        {#                <dl class="layui-nav-child">#}
+        {#                    <dd><a href="#">基本资料</a></dd>#}
+        {#                    <dd><a href="#">安全设置</a></dd>#}
+        {#                </dl>#}
+        {#            </li>#}
+        {#            <li class="layui-nav-item"><a href="#">退出</a></li>#}
+        {#        </ul>#}
     </div>
 
 
     <div class="layui-body">
         <!-- 内容主体区域 -->
         <div style="padding: 15px;">
-            <div class="layui-card layui-form">
+            <div class="layui-card layui-form" style="font-size: larger">
                 <div class="layui-card-body layui-row layui-col-sm12 layui-col-space12">
                     <div class="layui-form-item">
                     </div>
@@ -74,7 +74,7 @@
             </div>
             <div class="layui-col-md11">
                 <div class="layui-card">
-                    <div class="layui-card-header" style="font-size: larger">上传需要翻译的文件</div>
+                    <div class="layui-card-header" style="font-size: larger">上传需要翻译的文件(当前仅限英译汉)</div>
                     <div class="layui-card-body">
                         <div class="layui-upload-drag" id="test-upload-drag">
                             <i class="layui-icon"></i>
@@ -106,7 +106,7 @@
                 <hr>
             </div>
             <div class="layui-form-item">
-                <blockquote class="layui-elem-quote layui-col-sm11" style="font-size: small">当前网站只支持英译汉,其他功能还在实现中。
+                <blockquote class="layui-elem-quote layui-col-sm11" style="font-size: small">有道支持双译，谷歌以及文档翻译只支持英译汉，其他功能还在实现中。
                 </blockquote>
             </div>
         </div>
@@ -133,7 +133,7 @@
                     data: {"content": content},
                     success: function (data) {
                         $("#trans_area").val(data);
-                        layer.msg("使用谷歌翻译成功！");
+
                     }
                 })
             }
@@ -146,12 +146,12 @@
                     data: {"content": content},
                     success: function (data) {
                         $("#trans_area").val(data);
-                        layer.msg("使用有道翻译成功！");
+
                     }
                 })
             }
             else {
-                layer.msg('该方法还未实现,请选择其它翻译软件。', {icon: 5});
+                layer.msg('该方法还未实现，请选择其它翻译软件。', {icon: 5});
             }
 
         }//$("#text_area").change(trans);//实现输入动态实时翻译
@@ -178,138 +178,129 @@
                     console.log(files);
                     //读取本地文件
                     obj.preview(function (index, file, result) {
-                            var tr = $(['<tr id="upload-' + index + '">'
-                                , '<td>' + file.name + '</td>'
-                                , '<td>' + (file.size / 1014).toFixed(1) + 'kb</td>'
-                                , '<td></td>'
-                                , '<td>'
-                                , '<button class="layui-btn layui-btn-mini upload-preview">预览</button>'
-                                , '<button class="layui-btn layui-btn-mini upload-trans ">翻译</button>'
-                                , '<button class="layui-btn layui-btn-mini layui-btn-danger upload-delete">删除</button>'
-                                , '<button class="layui-btn layui-btn-mini layui-btn-danger view-content">查看</button>'//翻译完成后显示
-                                , '<button class="layui-btn layui-btn-mini layui-btn-danger download-pdf">下载pdf版</button>'//翻译完成之后显示
-                                , '<button class="layui-btn layui-btn-mini layui-btn-danger download-docx">下载word版</button>'//翻译完成之后显示
-                                , '</td>'
-                                , '</tr>'].join(''));
-                            //翻译
-                            tr.find('.upload-trans').on('click', function () {
-                                var translating = layer.load(2);//翻译的加载动画
-                                $.ajax({
-                                    url: "{% url "upload_trans" %} ",
-                                    type: "post",
-                                    data: {"file_name": file.name},//传当前文件名到后台
-                                    success: function (data) {
-                                        //$("#trans_area").val(data);//在该区域显示后台传过来的数据
-                                        layer.close(translating);
-                                        layer.msg("测试谷歌文件翻译成功！", {icon: 1});
-                                        var tr = demoListView.find('tr#upload-' + index)
-                                            , tds = tr.children();
-                                        tds.eq(2).html('<span style="color: #5FB878;">翻译已完成</span>');
-                                        tds.eq(3).find('.upload-trans').addClass('layui-hide'); //隐藏翻译按钮
-                                        tds.eq(3).find('.upload-preview').addClass('layui-hide'); //隐藏预览按钮
-                                        tds.eq(3).find('.upload-delete').addClass('layui-hide'); //隐藏删除按钮
-                                        tds.eq(3).find('.view-content').removeClass('layui-hide'); //除去隐藏查看翻译后的文档按钮
-                                        tds.eq(3).find('.download-pdf').removeClass('layui-hide'); //除去隐藏下载pdf按钮
-                                        tds.eq(3).find('.download-docx').removeClass('layui-hide'); //除去隐藏下载docx按钮
-                                    }
-                                })
-                                //obj.upload(index, file);
-                            });
-                            //预览
-                            tr.find('.upload-preview').on('click', function () {
+                        var tr = $(['<tr id="upload-' + index + '">'
+                            , '<td>' + file.name + '</td>'
+                            , '<td>' + (file.size / 1014).toFixed(1) + 'kb</td>'
+                            , '<td></td>'
+                            , '<td>'
+                            , '<button class="layui-btn layui-btn-mini upload-preview">预览</button>'
+                            , '<button class="layui-btn layui-btn-mini upload-trans ">翻译</button>'
+                            , '<button class="layui-btn layui-btn-mini layui-btn-danger upload-delete">删除</button>'
+                            , '<button class="layui-btn layui-btn-mini layui-btn-danger view-content">查看</button>'//翻译完成后显示
+                            , '<button class="layui-btn layui-btn-mini layui-btn-danger download-pdf">下载pdf版</button>'//翻译完成之后显示
+                            , '<button class="layui-btn layui-btn-mini layui-btn-danger download-docx">下载word版</button>'//翻译完成之后显示
+                            , '</td>'
+                            , '</tr>'].join(''));
+                        //翻译
+                        tr.find('.upload-trans').on('click', function () {
+                            var translating = layer.load(2);//翻译的加载动画
+                            $.ajax({
+                                url: "{% url "upload_trans" %} ",
+                                type: "post",
+                                data: {"file_name": file.name},//传当前文件名到后台
+                                success: function (data) {
+                                    //$("#trans_area").val(data);//在该区域显示后台传过来的数据
+                                    layer.close(translating);
+                                    layer.alert('翻译已完成，可以下载pdf及word文档，下载后服务器文档将会删除。', {
+                                        skin: 'layui-layer-molv'
+                                        , closeBtn: 0
+                                    });
+                                    var tr = demoListView.find('tr#upload-' + index)
+                                        , tds = tr.children();
+                                    tds.eq(2).html('<span style="color: #5FB878;">翻译已完成</span>');
+                                    tds.eq(3).find('.upload-trans').addClass('layui-hide'); //隐藏翻译按钮
+                                    tds.eq(3).find('.upload-preview').addClass('layui-hide'); //隐藏预览按钮
+                                    tds.eq(3).find('.upload-delete').addClass('layui-hide'); //隐藏删除按钮
+                                    tds.eq(3).find('.view-content').removeClass('layui-hide'); //除去隐藏查看翻译后的文档按钮
+                                    tds.eq(3).find('.download-pdf').removeClass('layui-hide'); //除去隐藏下载pdf按钮
+                                    tds.eq(3).find('.download-docx').removeClass('layui-hide'); //除去隐藏下载docx按钮
+                                }
+                            })
+                            //obj.upload(index, file);
+                        });
+                        //预览
+                        tr.find('.upload-preview').on('click', function () {
 
-                            });
-                            //删除
-                            tr.find('.upload-delete').on('click', function () {
-                                delete files[index]; //删除对应的文件
-                                tr.remove();
-                                uploadListIns.config.elem.next()[0].value = ''; //清空 input file 值，以免删除后出现同名文件不可选
-                            });
-                            //查看翻译完成的文档
-                            tr.find('.view-content').on('click', function () {
-                                {#var translating = layer.load(2);//翻译的加载动画#}
-                                {#$.ajax({#}
-                                {#   url: "{% url "upload_trans" %} ",#}
-                                {#    type: "post",#}
-                                {#    data: {"file_name": file.name},//传当前文件名到后台#}
-                                {#    success: function (data) {#}
-                                {#        //$("#trans_area").val(data);//在该区域显示后台传过来的数据#}
-                                {#        layer.close(translating);#}
-                                {#        var tr = demoListView.find('tr#upload-' + index)#}
-                                {#            , tds = tr.children();#}
-                                {#        tds.eq(2).html('<span style="color: #5FB878;">翻译已完成</span>');#}
-                                layer.msg("查看翻译的文档!", {icon: 1});
-                                //}
-                            });
-                            ;
-                            //下载pdf
-                            tr.find('.download-pdf').on('click', function () {
-                                 location.href="/download_pdf/?file_name="+file.name;
-                                });
-                            //下载docx
-                            tr.find('.download-docx').on('click', function () {
-                                 location.href="/download_docx/?file_name="+file.name;
-                                });
-                            demoListView.append(tr);
-                            });
-                        }
-                        , before
-                :
+                        });
+                        //删除
+                        tr.find('.upload-delete').on('click', function () {
+                            delete files[index]; //删除对应的文件
+                            tr.remove();
+                            uploadListIns.config.elem.next()[0].value = ''; //清空 input file 值，以免删除后出现同名文件不可选
+                        });
+                        //查看翻译完成的文档
+                        tr.find('.view-content').on('click', function () {
+                            layer.msg("查看翻译的文档!(未实现)", {icon: 1});
+                            //}
+                        });
+                        ;
+                        //下载pdf
+                        tr.find('.download-pdf').on('click', function () {
+                            location.href = "/download_pdf/?file_name=" + file.name;
+                        });
+                        //下载docx
+                        tr.find('.download-docx').on('click', function () {
+                            location.href = "/download_docx/?file_name=" + file.name;
+                        });
+                        demoListView.append(tr);
+                    });
+                }
+                , before:
 
                     function (obj) {
                         layer.load(); //上传时loading动画
                     }
 
                 ,
-                    done: function (data, index) {
-                        $('#upload-list').removeClass('layui-hide');//关闭列表隐藏
-                        layer.closeAll('loading'); //关闭loading
-                        if (data == 1) {//状态1代表上传成功
-                            //console.log(index);
-                            var tr = demoListView.find('tr#upload-' + index)
-                                , tds = tr.children();
-                            tds.eq(2).html('<span style="color: #5FB878;">上传成功</span>');
-                            tds.eq(3).find('.view-content').addClass('layui-hide'); //隐藏查看翻译后的文档按钮
-                            tds.eq(3).find('.download-pdf').addClass('layui-hide'); //隐藏下载pdf按钮
-                            tds.eq(3).find('.download-docx').addClass('layui-hide'); //除去隐藏下载pdf按钮
-                            //tds.eq(3).html(''); //清空操作
-                            layer.msg('上传成功,可以点击翻译按钮开始翻译。', {icon: 1});
-                            return delete this.files[index]; //删除文件队列已经上传成功的文件
-                        }
-                        else if (data == 0) {//状态0代表文件存在
-                            var tr = demoListView.find('tr#upload-' + index)
-                                , tds = tr.children();
-                            tds.eq(2).html('<span style="color: #5FB878;">文件已存在,可直接翻译</span>');
-                            //tds.eq(3).find('.upload-trans').addClass('layui-hide'); //隐藏翻译按钮
-                            tds.eq(3).find('.view-content').addClass('layui-hide'); //隐藏查看翻译后的文档按钮
-                            tds.eq(3).find('.download-pdf').addClass('layui-hide'); //隐藏下载pdf按钮
-                            tds.eq(3).find('.download-docx').addClass('layui-hide'); //隐藏下载docx按钮
-                            layer.msg('可以直接开始翻译。', {icon: 5});
-                            return delete this.files[index]; //删除文件队列已经上传失败的文件
-                        }
-                        else if (data == 2) {//状态2代表文件格式不符合要求
-                            //console.log(index);
-                            var tr = demoListView.find('tr#upload-' + index)
-                                , tds = tr.children();
-                            tds.eq(2).html('<span style="color: #FF5722;">文件不符合格式要求</span>');
-                            tds.eq(3).find('.upload-trans').addClass('layui-hide'); //隐藏翻译按钮
-                            tds.eq(3).find('.upload-preview').addClass('layui-hide'); //隐藏预览按钮
-                            tds.eq(3).find('.view-content').addClass('layui-hide'); //隐藏查看翻译后的文档按钮
-                            tds.eq(3).find('.download-pdf').addClass('layui-hide'); //隐藏下载pdf按钮
-                            tds.eq(3).find('.download-docx').addClass('layui-hide'); //隐藏下载docx按钮
-                            layer.msg('文件不符合格式要求,请重新上传。', {icon: 5});
-                            return delete this.files[index]; //删除文件队列已经上传失败的文件
-                        }
-                        else {
-                            layer.msg("上传失败  " + data.msg, {icon: 5});
-                        }
+                done: function (data, index) {
+                    $('#upload-list').removeClass('layui-hide');//关闭列表隐藏
+                    layer.closeAll('loading'); //关闭loading
+                    if (data == 1) {//状态1代表上传成功
+                        //console.log(index);
+                        var tr = demoListView.find('tr#upload-' + index)
+                            , tds = tr.children();
+                        tds.eq(2).html('<span style="color: #5FB878;">上传成功</span>');
+                        tds.eq(3).find('.view-content').addClass('layui-hide'); //隐藏查看翻译后的文档按钮
+                        tds.eq(3).find('.download-pdf').addClass('layui-hide'); //隐藏下载pdf按钮
+                        tds.eq(3).find('.download-docx').addClass('layui-hide'); //除去隐藏下载pdf按钮
+                        //tds.eq(3).html(''); //清空操作
+                        layer.msg('上传成功,可以点击翻译按钮开始翻译。', {icon: 1});
+                        return delete this.files[index]; //删除文件队列已经上传成功的文件
                     }
+                    else if (data == 0) {//状态0代表文件存在
+                        var tr = demoListView.find('tr#upload-' + index)
+                            , tds = tr.children();
+                        tds.eq(2).html('<span style="color: #5FB878;">文件已存在</span>');
+                        //tds.eq(3).find('.upload-trans').addClass('layui-hide'); //隐藏翻译按钮
+                        tds.eq(3).find('.view-content').addClass('layui-hide'); //隐藏查看翻译后的文档按钮
+                        tds.eq(3).find('.download-pdf').addClass('layui-hide'); //隐藏下载pdf按钮
+                        tds.eq(3).find('.download-docx').addClass('layui-hide'); //隐藏下载docx按钮
+                        layer.msg('可以直接开始翻译。', {icon: 1});
+                        return delete this.files[index]; //删除文件队列已经上传失败的文件
+                    }
+                    else if (data == 2) {//状态2代表文件格式不符合要求
+                        //console.log(index);
+                        var tr = demoListView.find('tr#upload-' + index)
+                            , tds = tr.children();
+                        tds.eq(2).html('<span style="color: #FF5722;">文件不符合格式要求</span>');
+                        tds.eq(3).find('.upload-trans').addClass('layui-hide'); //隐藏翻译按钮
+                        tds.eq(3).find('.upload-preview').addClass('layui-hide'); //隐藏预览按钮
+                        tds.eq(3).find('.view-content').addClass('layui-hide'); //隐藏查看翻译后的文档按钮
+                        tds.eq(3).find('.download-pdf').addClass('layui-hide'); //隐藏下载pdf按钮
+                        tds.eq(3).find('.download-docx').addClass('layui-hide'); //隐藏下载docx按钮
+                        layer.msg('文件不符合格式要求,请重新上传。', {icon: 5});
+                        return delete this.files[index]; //删除文件队列已经上传失败的文件
+                    }
+                    else {
+                        layer.msg("上传失败  " + data.msg, {icon: 5});
+                    }
+                }
                 ,
-                    error: function () {
-                        layer.closeAll('loading'); //关闭loading
-                        layer.msg('请求不到url，上传失败。', {icon: 5});
-                    }
-                });
+                error: function () {
+                    layer.closeAll('loading'); //关闭loading
+                    layer.msg('请求不到url，上传失败。', {icon: 5});
+                }
+            });
         });
     </script>
 </body>

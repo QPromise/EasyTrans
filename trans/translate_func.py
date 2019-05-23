@@ -97,10 +97,7 @@ def youdao_translate(content):
     ta = json.loads(html)
     res = ta['translateResult'][0][0]['tgt']
     print('youdao:',res)
-    if res:
-        return (True,res)
-    else:
-        return (False,res)
+    return res
 
 # 谷歌翻译方法
 def google_translate(content):
@@ -109,10 +106,8 @@ def google_translate(content):
     js = Py4Js()
     tk = js.getTk(content)
 
-    if len(content) > 4891:      
-        print("翻译的长度超过限制！！！")      
-        return ''   
-  
+    if len(content) > 4891:
+        return '输入请不要超过4891个字符！'
     param = {'tk': tk, 'q': content}  
   
     result = requests.get("""http://translate.google.cn/translate_a/single?client=t&sl=en 
@@ -122,16 +117,13 @@ def google_translate(content):
     #返回的结果为Json，解析为一个嵌套列表  
     trans = result.json()[0]
     #print('google:',trans)
-    ret = ''
+    res = ''
     for i in range(len(trans)):
         line = trans[i][0]
         if line != None:
-            ret += trans[i][0]
+            res += trans[i][0]
 
-    if ret:
-        return (True,ret)
-    else:
-        return (False,ret)
+    return res
 
 
 def translate_func(content):

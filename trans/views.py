@@ -1,4 +1,3 @@
-import json
 import os
 from django.conf import settings
 from django.shortcuts import render
@@ -18,8 +17,7 @@ def google_trans(request):
         return render(request, "index.html")
     else:
         content = request.POST.get("content")
-        google_trans_content = translate_func.google_translate(content)[1]
-        print(google_trans_content)
+        google_trans_content = translate_func.google_translate(content)
         #error_msg = '翻译失败~'
         #return render(request, 'index.html', {'trans_content': json.dumps(trans_content), 'error_msg': error_msg})
         return HttpResponse(google_trans_content)
@@ -31,8 +29,7 @@ def youdao_trans(request):
         return render(request, "index.html")
     else:
         content = request.POST.get("content")
-        youdao_trans_content = translate_func.youdao_translate(content)[1]
-        print(youdao_trans_content)
+        youdao_trans_content = translate_func.youdao_translate(content)
         return HttpResponse(youdao_trans_content)
 
 # 上传要翻译的pdf文件
@@ -42,10 +39,8 @@ def upload_func(request):
         return render(request, "index.html")
     else:
         file_obj = request.FILES.get('file')
-        print(file_obj, type(file_obj))
         if str(file_obj.name).endswith('.pdf') or str(file_obj.name).endswith('.doc') or str(file_obj.name).endswith('.docx'):
             path = os.path.join(settings.BASE_DIR, 'trans', 'input_file', file_obj.name)
-            print(path)
             if os.path.exists(path):
                 print(path+'已存在.')
                 return HttpResponse(0)
@@ -64,7 +59,6 @@ def upload_trans(request):
     #文档只支持谷歌翻译
     file_name = request.POST.get("file_name")
     path = os.path.join(settings.BASE_DIR, 'trans', 'input_file',file_name)
-    print(path)
     if str(file_name).endswith('.pdf'):#如果后缀为.pdf则执行打开pdf文件的操作
         trans_to_pdf.trans_pdf(file_name, path)#调用pdf翻译类的函数
         pass
@@ -110,7 +104,6 @@ def download_docx(request):
     path = os.path.join(settings.BASE_DIR, 'trans', 'output_file','translated_'+file_name[:-4]+'.docx')
     try:
         def readFile(path, buf_size=512):
-            print(path)
             with open(path, 'rb') as f:
                 while True:
                     c = f.read(buf_size)
