@@ -121,7 +121,25 @@ def google_translate(content):
 
     return res
 
+#必应翻译方法
+def is_Chinese(content):       #判断输入的内容是否是中文
+    for ch in content:
+        if '\u4e00' <= ch <= '\u9fff':
+            return True
+        else:
+            return False
 
+def bing_translate(content):
+    if len(content) > 4891:
+        return '输入请不要超过4891个字符！'
+    url = 'https://cn.bing.com/ttranslate?&category=&IG=C4A52C35D175427988E6510779DEFB5F&IID=translator.5036.8'
+    if is_Chinese(content):
+        res = requests.post(url, data={'text':content, 'from': 'zh-CHS', 'to': "en", 'doctype': 'json'}).json()['translationResponse']
+    else:
+        res = requests.post(url, data={'text': content, 'from': 'en', 'to': "zh-CHS", 'doctype': 'json'}).json()['translationResponse']
+    return res
+
+#混合,暂时不用
 def translate_func(content):
     '''集成百度、谷歌、有道多合一的翻译'''
     # baidu_translate,google_translate,youdao_translate

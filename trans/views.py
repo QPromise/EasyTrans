@@ -46,6 +46,15 @@ def youdao_trans(request):
         youdao_trans_content = translate_func.youdao_translate(content)
         return HttpResponse(youdao_trans_content)
 
+# 必应翻译调用 方法接口在 translate_func.py文件中
+@csrf_exempt
+def bing_trans(request):
+    if request.method == "GET":
+        return render(request, "index.html")
+    else:
+        content = request.POST.get("content")
+        bing_trans_content = translate_func.bing_translate(content)
+        return HttpResponse(bing_trans_content)
 # 上传要翻译的pdf文件
 @csrf_exempt
 def upload_func(request):

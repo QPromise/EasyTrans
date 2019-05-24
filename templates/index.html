@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" http-equiv="Access-Control-Allow-Origin">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>layout 后台大布局 - Layui</title>
+    <title>EasyTrans-Website</title>
     <link rel="stylesheet" href="{% static 'layui/css/layui.css' %}">
 </head>
 <body class="layui-layout-body" >
@@ -44,8 +44,9 @@
                             <select id="trans_tools" name="city">
                                 <option value="1">谷歌</option>
                                 <option value="2">有道</option>
-                                <option value="3">百度</option>
+                                <option value="3">必应</option>
                                 <option value="4">搜狗</option>
+                                <option value="5">百度</option>
                             </select>
                         </div>
                         <div class="layui-input-inline">
@@ -127,7 +128,7 @@
             if (content == '') {
                 layer.msg('请先输入要翻译的内容', {icon: 5});
             }
-            else if (flag == 1) {
+            else if (flag == 1) {//谷歌翻译
                 $.ajax({
                     url: "{% url "google_trans" %} ",
                     type: "post",
@@ -138,11 +139,24 @@
                     }
                 })
             }
-            else if (flag == 2) {
+            else if (flag == 2) {//有道翻译
                 url_str = "youdao_trans";
                 console.log(url_str);
                 $.ajax({
                     url: "{% url "youdao_trans" %} ",
+                    type: "post",
+                    data: {"content": content},
+                    success: function (data) {
+                        $("#trans_area").val(data);
+
+                    }
+                })
+            }
+            else if (flag == 3) {//必应翻译
+                url_str = "bing_trans";
+                console.log(url_str);
+                $.ajax({
+                    url: "{% url "bing_trans" %} ",
                     type: "post",
                     data: {"content": content},
                     success: function (data) {
