@@ -1,19 +1,15 @@
 # -*- encoding: utf-8 -*-
 
 '''
-@Author  :
+@Author  :  leoqin
 
-@License :
+@Contact :  qcs@stu.ouc.edu.cn
 
-@Contact :
+@Software:  Pycharm
 
-@Software:
+@Time    :  May 24,2019
 
-@File    :
-
-@Time    :
-
-@Desc    :   实现翻译的爬虫功能.
+@Desc    :  实现翻译的爬虫功能
 
 '''
 

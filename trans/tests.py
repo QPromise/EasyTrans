@@ -1,3 +1,17 @@
+# -*- encoding: utf-8 -*-
+
+'''
+@Author  :  leoqin
+
+@Contact :  qcs@stu.ouc.edu.cn
+
+@Software:  Pycharm
+
+@Time    :  May 24,2019
+
+@Desc    :  测试正则匹配功能
+
+'''
 import re
 def is_figure(target):
     return re.match(r'fig\..\.',target,re.I)
@@ -9,4 +23,3 @@ def is_reference(goal):
     match_3 = re.search(r'(.+?)\.(.+?)\.(.+?)\.(\d{4});(\d+)\((\d{1,2})\):(\d+-\d+)\.', goal, re.X|re.I|re.U)
     print(match_3)
 is_reference(goal)
-print( 0 if is_figure(target) else 1)

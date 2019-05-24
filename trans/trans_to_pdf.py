@@ -1,3 +1,17 @@
+# -*- encoding: utf-8 -*-
+
+'''
+@Author  :  leoqin
+
+@Contact :  qcs@stu.ouc.edu.cn
+
+@Software:  Pycharm
+
+@Time    :  May 24,2019
+
+@Desc    :  实现翻译pdf然后导入pdf以及word中的功能
+
+'''
 import os
 import fitz
 import time

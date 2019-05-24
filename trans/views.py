@@ -1,3 +1,17 @@
+# -*- encoding: utf-8 -*-
+
+'''
+@Author  :  leoqin
+
+@Contact :  qcs@stu.ouc.edu.cn
+
+@Software:  Pycharm
+
+@Time    :  May 24,2019
+
+@Desc    :  视图函数，实现前台翻译接口以及上传待翻译pdf，下载翻译后的pdf及word文档。
+
+'''
 import os
 from django.conf import settings
 from django.shortcuts import render

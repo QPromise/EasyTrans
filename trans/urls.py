@@ -1,5 +1,18 @@
-from django.conf.urls import url
+# -*- encoding: utf-8 -*-
 
+'''
+@Author  :  leoqin
+
+@Contact :  qcs@stu.ouc.edu.cn
+
+@Software:  Pycharm
+
+@Time    :  May 24,2019
+
+@Desc    :  绑定url与视图函数
+
+'''
+from django.conf.urls import url
 from . import views
 urlpatterns = [
     url(r'^$', views.index, name='index'),
