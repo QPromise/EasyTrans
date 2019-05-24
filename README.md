@@ -50,7 +50,11 @@ wcwidth==0.1.7
 ### 展示
 ---
 ![yanshi4.gif](https://i.loli.net/2019/05/24/5ce7f0a825f6820093.gif)
+<br>
+<br>
 ![Vi7jyt.gif](https://s2.ax1x.com/2019/05/24/Vi7jyt.gif)
+<br>
+<br>
 ![yasnhi.gif](https://i.loli.net/2019/05/23/5ce6af09b4dd645364.gif)
 ### 参考文档
 ---
