@@ -65,7 +65,9 @@ wcwidth==0.1.7
 强烈推荐在 Virtualenv 下进行 Django 的开发。Virtualenv 是一个 Python 工具，使用它可以创建一个独立的 Python 环境。<br>
 
 在命令行进入到保存虚拟环境的文件夹()，输入如下命令创建并激活虚拟环境：
-`C:\WINDOWS\system32>pip install virtualenv`<br>
+<br>
+`C:\WINDOWS\system32>pip install virtualenv`
+<br>
 `C:\WINDOWS\system32>virtualenv C:\Users\Envs\EasyTrans_env`
 <br>
 `C:\WINDOWS\system32>C:\Users\Envs\EasyTrans_env\Scripts\activate`
