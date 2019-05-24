@@ -71,7 +71,7 @@ wcwidth==0.1.7
 `pip install -r requirements.txt`
 #### 4.数据库迁移
 命令行输入<br>
-`python manage.py makemigration`<br>
+`python manage.py makemigrations`<br>
 `python manage.py migrate`
 #### 5.创建后台管理员用户
 命令行输入<br>
