@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="64eb2f37-4a40-4d88-b1c5-f89111f7696f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/trans/translate_func.py" beforeDir="false" afterPath="$PROJECT_DIR$/trans/translate_func.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -37,19 +38,20 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="15" />
-          <entry key="html" value="3423" />
-          <entry key="py" value="4587" />
+          <entry key="html" value="3447" />
+          <entry key="py" value="4592" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="3423" />
+          <entry key="HTML" value="3447" />
           <entry key="PLAIN_TEXT" value="15" />
-          <entry key="Python" value="4587" />
+          <entry key="Python" value="4592" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
+          <entry key="css" value="1" />
           <entry key="gif" value="13" />
           <entry key="html" value="3" />
           <entry key="js" value="5" />
@@ -62,6 +64,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
+          <entry key="CSS" value="1" />
           <entry key="HTML" value="3" />
           <entry key="Image" value="15" />
           <entry key="JavaScript" value="5" />
@@ -105,13 +108,22 @@
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="132">
-              <caret line="6" column="28" selection-start-line="6" selection-start-column="28" selection-end-line="6" selection-end-column="28" />
+            <state relative-caret-position="-264">
+              <caret line="6" column="20" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/trans/static/layui/css/layui.css">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -132,15 +144,13 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/trans/translate_func.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="291">
-              <caret line="131" column="60" selection-start-line="131" selection-start-column="60" selection-end-line="131" selection-end-column="60" />
+            <state relative-caret-position="2552">
+              <caret line="121" selection-start-line="121" selection-end-line="121" />
               <folding>
                 <element signature="e#157#178#0" expanded="true" />
-                <marker date="1558701753956" expanded="true" signature="4068:4069" ph="..." />
-                <marker date="1558701753956" expanded="true" signature="4097:4102" ph="..." />
               </folding>
             </state>
           </provider>
@@ -200,8 +210,8 @@
         <option value="$PROJECT_DIR$/trans/tests.py" />
         <option value="$PROJECT_DIR$/trans/views.py" />
         <option value="$PROJECT_DIR$/trans/urls.py" />
-        <option value="$PROJECT_DIR$/templates/index.html" />
         <option value="$PROJECT_DIR$/trans/translate_func.py" />
+        <option value="$PROJECT_DIR$/templates/index.html" />
       </list>
     </option>
   </component>
@@ -211,7 +221,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-8" />
     <option name="width" value="1206" />
     <option name="height" value="776" />
@@ -237,6 +247,43 @@
               <item name="EasyTrans" type="b2602c69:ProjectViewProjectNode" />
               <item name="EasyTrans" type="462c0819:PsiDirectoryNode" />
               <item name="trans" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="EasyTrans" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EasyTrans" type="462c0819:PsiDirectoryNode" />
+              <item name="trans" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="EasyTrans" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EasyTrans" type="462c0819:PsiDirectoryNode" />
+              <item name="trans" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="layui" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="EasyTrans" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EasyTrans" type="462c0819:PsiDirectoryNode" />
+              <item name="trans" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="layui" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="EasyTrans" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EasyTrans" type="462c0819:PsiDirectoryNode" />
+              <item name="trans" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="layui" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="EasyTrans" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EasyTrans" type="462c0819:PsiDirectoryNode" />
+              <item name="trans" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="layui" type="462c0819:PsiDirectoryNode" />
+              <item name="lay" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -423,10 +470,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
+    <frame x="-8" y="-8" width="1456" height="876" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.13467048" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21561605" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -440,7 +487,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.1417004" />
+      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.102564104" />
       <window_info anchor="bottom" id="Python Console" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -475,7 +522,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/django/urls/conf.py" />
     <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/django/core/checks/urls.py" />
     <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/django/core/management/commands/runserver.py" />
     <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/django/utils/autoreload.py" />
@@ -648,21 +694,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/index.html">
+    <entry file="file://$PROJECT_DIR$/trans/translate_func.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="6" column="28" selection-start-line="6" selection-start-column="28" selection-end-line="6" selection-end-column="28" />
+        <state relative-caret-position="2552">
+          <caret line="121" selection-start-line="121" selection-end-line="121" />
+          <folding>
+            <element signature="e#157#178#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/trans/translate_func.py">
+    <entry file="file://$PROJECT_DIR$/trans/static/layui/css/layui.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="291">
-          <caret line="131" column="60" selection-start-line="131" selection-start-column="60" selection-end-line="131" selection-end-column="60" />
+        <state relative-caret-position="-264">
+          <caret line="6" column="20" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
           <folding>
-            <element signature="e#157#178#0" expanded="true" />
-            <marker date="1558701753956" expanded="true" signature="4068:4069" ph="..." />
-            <marker date="1558701753956" expanded="true" signature="4097:4102" ph="..." />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -119,7 +119,7 @@ def is_Chinese(content):       #判断输入的内容是否是中文
             return True
         else:
             return False
-        
+
 # 必应翻译方法
 def bing_translate(content): # 尽量保证翻译内容既有中文也有英文的情况，判断没考虑此情况。
     if len(content) > 4891:
