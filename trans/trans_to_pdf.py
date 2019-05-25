@@ -46,9 +46,12 @@ def trans_pdf(file_name, path):
         imgcount = 0
         for img in img_list:  # 获取当前页面的图像列表
             pix_temp1 = fitz.Pixmap(cur_pdf, img[0])
-            pix_temp2 = fitz.Pixmap(cur_pdf, img[1])
-            pix_temp = fitz.Pixmap(pix_temp1)
-            pix_temp.setAlpha(pix_temp2.samples)
+            if img[1]:
+                pix_temp2 = fitz.Pixmap(cur_pdf, img[1])
+                pix_temp = fitz.Pixmap(pix_temp1)
+                pix_temp.setAlpha(pix_temp2.samples)
+            else:
+                pix_temp = pix_temp1
             print('当前页面的图像', pix_temp)
             imgcount += 1
             new_name = "图片{}.png".format(imgcount)  # 生成图片的名称
