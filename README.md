@@ -1,21 +1,21 @@
 # EasyTrans
 
 ## 目的
----
+
 * 看英文论文去各个翻译网站对比翻译结果的时间消耗。
 * 下载翻译后的pdf以及word要花钱，如翻译狗，有道等。
 * 必应的英译汉翻译文档时个人认为比较好用。
 ## 实现
----
+
 * 基于django、PyMuPdf、谷歌、有道翻译实现了pdf英译汉的功能，翻译后的pdf格式基本保持不变，可以下载docx和pdf格式的翻译文档，简单的满足看论文以及写总结的需求。
 ## 问题
----
+
 * word不能实现pdf一样的排版，翻译后的pdf还是存在样式问题（需要考虑的很多，慢慢做优化）。
 * 表格无法写入。
 * 搜狗，百度翻译接口未实现。
 * 有道翻译长句子有问题，建议使用谷歌、必应。
 ## 环境 
----
+
 > 开发环境的系统平台为 Windows 10 （64 位），Python 版本为 3.6 （64 位），Django版本为 2.2
  ```
 atomicwrites==1.3.0
@@ -49,7 +49,7 @@ urllib3==1.24.3
 wcwidth==0.1.7
 ```
 ## 展示
----
+
 ![yanshi4.gif](https://i.loli.net/2019/05/24/5ce7f0a825f6820093.gif)
 <br>
 <br>
@@ -58,10 +58,10 @@ wcwidth==0.1.7
 <br>
 ![yasnhi.gif](https://i.loli.net/2019/05/23/5ce6af09b4dd645364.gif)
 ## 参考文档
----
+
 [PyMuPDF参考文档](https://pymupdf.readthedocs.io/en/latest/)
 ## 在本地运行项目
----
+
 ### 1.克隆项目到本地(不使用git工具的话，直接下载就ok)
 打开命令行，进入到保存项目的文件夹，输入如下命令：<br>
 `https://github.com/QPromise/Easy-Trans.git`
