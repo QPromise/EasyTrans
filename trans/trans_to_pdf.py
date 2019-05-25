@@ -45,7 +45,10 @@ def trans_pdf(file_name, path):
         img_list = cur_page.getImageList()  # 获取当前页面的图片对象
         imgcount = 0
         for img in img_list:  # 获取当前页面的图像列表
-            pix_temp = fitz.Pixmap(cur_pdf, img[0])
+            pix_temp1 = fitz.Pixmap(cur_pdf, img[0])
+            pix_temp2 = fitz.Pixmap(cur_pdf, img[1])
+            pix_temp = fitz.Pixmap(pix_temp1)
+            pix_temp.setAlpha(pix_temp2.samples)
             print('当前页面的图像', pix_temp)
             imgcount += 1
             new_name = "图片{}.png".format(imgcount)  # 生成图片的名称
@@ -138,7 +141,7 @@ def trans_pdf(file_name, path):
                 else:
                     if flag == 1:
                         # img.drawRect(fitz.Rect(end[0],begin[1],end[2],end[3]))
-                        res = translate_func.google_translate(content).replace(' ', '')  # 翻译结果去掉汉字中的空格
+                        res = translate_func.bing_translate(content).replace(' ', '')  # 翻译结果去掉汉字中的空格
                         new_docx.add_paragraph(res)  # 添加到新的docx文档中
                         # print('content:',content)
                         # print(res)
@@ -158,7 +161,7 @@ def trans_pdf(file_name, path):
                         # img.drawRect(r)
                         trans_pragraph = blks[num][4].replace("\n", " ")  # 将待翻译的句子换行换成空格
                         if is_figure(trans_pragraph.replace(' ','')):  # 将该块的判断是否是图片标注
-                            res = translate_func.google_translate(trans_pragraph).replace(' ', '')  # 翻译结果去掉汉字中的空格
+                            res = translate_func.bing_translate(trans_pragraph).replace(' ', '')  # 翻译结果去掉汉字中的空格
                             new_page.insertTextbox(r, res, fontname="song", fontfile=os.path.join(settings.BASE_DIR,
                                                                                                'trans/static/fonts/SimSun.ttf'),
                                                 fontsize=7, align=fitz.TEXT_ALIGN_CENTER)
@@ -170,7 +173,7 @@ def trans_pdf(file_name, path):
                                                 fontsize=fonts, align=text_pos)
                         else:
                             # 翻译结果去掉汉字中的空格
-                            res = translate_func.google_translate(trans_pragraph).replace(' ', '')
+                            res = translate_func.bing_translate(trans_pragraph).replace(' ', '')
                             # 添加到新的docx文档中
                             new_docx.add_paragraph(res)
                             if reference_flag == 1:
