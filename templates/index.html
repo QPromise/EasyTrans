@@ -1,4 +1,4 @@
-{% load static %}
+{% load staticfiles %}
 <!DOCTYPE html>
 <html>
 <head>
@@ -266,7 +266,6 @@
                     function (obj) {
                         layer.load(); //上传时loading动画
                     }
-
                 ,
                 done: function (data, index) {
                     $('#upload-list').removeClass('layui-hide');//关闭列表隐藏

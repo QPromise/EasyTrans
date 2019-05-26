@@ -84,7 +84,10 @@ def upload_trans(request):
     path = os.path.join(settings.BASE_DIR, 'trans', 'input_file',file_name)
     if str(file_name).endswith('.pdf'):#如果后缀为.pdf则执行打开pdf文件的操作
         trans_to_pdf.trans_pdf(file_name, path)#调用pdf翻译类的函数
-        pass
+        try:
+            os.remove(path)  # 翻译完成后删除之后就移除
+        except:
+            print('请先关闭该目录下的文件！')
     elif str(file_name).endswith('.doc') or str(file_name).endswith('.docx'):#如果后缀为.doc or .docx则执行打开pdf文件的操作
         pass
     return HttpResponse(1)

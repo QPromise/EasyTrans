@@ -45,6 +45,7 @@ def trans_pdf(file_name, path):
         img_list = cur_page.getImageList()  # 获取当前页面的图片对象
         imgcount = 0
         for img in img_list:  # 获取当前页面的图像列表
+            print('img:::',img)
             pix_temp1 = fitz.Pixmap(cur_pdf, img[0])
             if img[1]:
                 pix_temp2 = fitz.Pixmap(cur_pdf, img[1])
@@ -52,7 +53,7 @@ def trans_pdf(file_name, path):
                 pix_temp.setAlpha(pix_temp2.samples)
             else:
                 pix_temp = pix_temp1
-            print('当前页面的图像', pix_temp)
+            print('当前页面的图像:::', pix_temp)
             imgcount += 1
             new_name = "图片{}.png".format(imgcount)  # 生成图片的名称
             pix_temp.writeImage(os.path.join(settings.BASE_DIR, 'trans', 'output_file', new_name))
@@ -64,7 +65,6 @@ def trans_pdf(file_name, path):
                                 height=cur_page.MediaBoxSize[1])  # 创建一个新的页面与之前的页面相同大小
         img = new_page.newShape()  # prepare /Contents object
         disp = fitz.Rect(cur_page.CropBoxPosition, cur_page.CropBoxPosition)
-        print('disp:', disp)
         croprect = cur_page.rect + disp
         # img.drawRect(croprect)#画出整个页面的矩形
         # img.finish(color=gray, fill=gray)#填充颜色
@@ -82,19 +82,19 @@ def trans_pdf(file_name, path):
                 break
             # 如果这个块里放的是图像.
             if blks[num][-1] == 1:
+                print('图像:::',blks[num])
                 imgcount += 1
-                print('blks::', blks[num])
+                print('2:',imgcount)
                 img_r = blks[num][:4]  # 图片要放置位置的坐标
-                path = os.path.join(settings.BASE_DIR, 'trans', 'output_file',
-                                    '图片{}.png'.format(imgcount))  # 当前页面第几个图片的位置
-                img = open(path, "rb").read()  # 输入流
-                new_page.insertImage(img_r, stream=img, keep_proportion=True)  # 输入到新的pdf页面对应位置
-                new_docx.add_picture(path, width=Inches(2))  # 设置图片保存的宽度
                 try:
-                    pass
-                    os.remove(path)  # 输入到新的pdf之后就移除
+                    path_img = os.path.join(settings.BASE_DIR, 'trans', 'output_file',
+                                        '图片{}.png'.format(imgcount))  # 当前页面第几个图片的位置
+                    img = open(path_img, "rb").read()  # 输入流
+                    new_page.insertImage(img_r, stream=img, keep_proportion=True)  # 输入到新的pdf页面对应位置
+                    new_docx.add_picture(path_img, width=Inches(3))  # 设置图片保存的宽度
+                    os.remove(path_img)  # 输入到新的pdf之后就移除
                 except:
-                    print('删除失败！！')
+                    pass
                 continue # 跳过下面的插入翻译后文字的过程
 
             # 设置默认字体大小以及位置
