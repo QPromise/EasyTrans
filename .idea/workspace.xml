@@ -3,14 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="64eb2f37-4a40-4d88-b1c5-f89111f7696f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EasyTrans/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/EasyTrans/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trans/input_file/1-s2.0-S0031920107000349-main_2.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/trans/input_file/test_img.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/trans/output_file/translated_1-s2.0-S0031920107000349-main_2.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/trans/output_file/translated_test_img.docx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/trans/trans_to_pdf.py" beforeDir="false" afterPath="$PROJECT_DIR$/trans/trans_to_pdf.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trans/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/trans/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trans/translate_func.py" beforeDir="false" afterPath="$PROJECT_DIR$/trans/translate_func.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -45,27 +40,27 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="15" />
-          <entry key="html" value="3473" />
-          <entry key="py" value="4869" />
+          <entry key="html" value="3475" />
+          <entry key="py" value="5167" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="3473" />
+          <entry key="HTML" value="3475" />
           <entry key="PLAIN_TEXT" value="15" />
-          <entry key="Python" value="4869" />
+          <entry key="Python" value="5167" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="css" value="1" />
           <entry key="gif" value="13" />
-          <entry key="html" value="3" />
+          <entry key="html" value="4" />
           <entry key="ico" value="1" />
           <entry key="js" value="5" />
           <entry key="md" value="1" />
-          <entry key="png" value="7" />
-          <entry key="py" value="51" />
+          <entry key="png" value="29" />
+          <entry key="py" value="54" />
           <entry key="sqlite3" value="1" />
           <entry key="txt" value="3" />
         </counts>
@@ -73,53 +68,23 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CSS" value="1" />
-          <entry key="HTML" value="3" />
-          <entry key="Image" value="21" />
+          <entry key="HTML" value="4" />
+          <entry key="Image" value="43" />
           <entry key="JavaScript" value="5" />
           <entry key="Markdown" value="1" />
           <entry key="PLAIN_TEXT" value="4" />
-          <entry key="Python" value="51" />
+          <entry key="Python" value="54" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/trans/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="402">
-              <caret line="93" selection-start-line="93" selection-end-line="93" />
-              <folding>
-                <marker date="1558834680363" expanded="true" signature="500:591" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="44">
-              <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/trans/models.py">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/EasyTrans/settings.py">
+        <entry file="file://$PROJECT_DIR$/trans/trans_to_pdf.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="181">
-              <caret line="25" column="12" lean-forward="true" selection-start-line="25" selection-start-column="12" selection-end-line="25" selection-end-column="12" />
+            <state relative-caret-position="237">
+              <caret line="208" column="15" selection-start-line="208" selection-start-column="15" selection-end-line="208" selection-end-column="15" />
             </state>
           </provider>
         </entry>
@@ -127,8 +92,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/trans/translate_func.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2134">
-              <caret line="11" column="14" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
+            <state relative-caret-position="1992">
+              <caret line="132" column="47" selection-start-line="132" selection-start-column="47" selection-end-line="132" selection-end-column="47" />
               <folding>
                 <element signature="e#157#178#0" expanded="true" />
               </folding>
@@ -137,31 +102,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/trans/trans_to_pdf.py">
+        <entry file="file://$PROJECT_DIR$/templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2935">
-              <caret line="61" column="35" selection-start-line="61" selection-start-column="35" selection-end-line="61" selection-end-column="35" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/requirements.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
-              <caret line="7" column="9" selection-start-line="7" selection-end-line="8" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/trans/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="18" column="35" selection-start-line="18" selection-start-column="35" selection-end-line="18" selection-end-column="35" />
-              <folding>
-                <element signature="e#157#189#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="286">
+              <caret line="49" column="36" selection-start-line="49" selection-start-column="36" selection-end-line="49" selection-end-column="36" />
             </state>
           </provider>
         </entry>
@@ -183,6 +127,7 @@
       <find>page2</find>
       <find>google</find>
       <find>path</find>
+      <find>bing</find>
     </findStrings>
     <replaceStrings>
       <replace>translate_func</replace>
@@ -190,6 +135,7 @@
       <replace>output_file</replace>
       <replace>new_page</replace>
       <replace>bing</replace>
+      <replace>google</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -208,11 +154,11 @@
         <option value="$PROJECT_DIR$/trans/baidusign.js" />
         <option value="$PROJECT_DIR$/trans/tests.py" />
         <option value="$PROJECT_DIR$/trans/urls.py" />
+        <option value="$PROJECT_DIR$/EasyTrans/settings.py" />
+        <option value="$PROJECT_DIR$/trans/views.py" />
         <option value="$PROJECT_DIR$/trans/translate_func.py" />
         <option value="$PROJECT_DIR$/templates/index.html" />
-        <option value="$PROJECT_DIR$/EasyTrans/settings.py" />
         <option value="$PROJECT_DIR$/trans/trans_to_pdf.py" />
-        <option value="$PROJECT_DIR$/trans/views.py" />
       </list>
     </option>
   </component>
@@ -254,6 +200,12 @@
               <item name="EasyTrans" type="462c0819:PsiDirectoryNode" />
               <item name="trans" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="EasyTrans" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EasyTrans" type="462c0819:PsiDirectoryNode" />
+              <item name="trans" type="462c0819:PsiDirectoryNode" />
+              <item name="output_file" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -263,7 +215,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="E:/his_u2s" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
@@ -439,9 +391,9 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1456" height="876" extended-state="7" />
+    <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14040114" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25787964" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -455,7 +407,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.3319838" />
+      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.28475034" />
       <window_info anchor="bottom" id="Python Console" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -490,63 +442,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://D:/Python/Lib/threading.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="883" selection-start-line="883" selection-end-line="883" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/django/core/management/base.py" />
-    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/django/core/checks/registry.py" />
-    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/django/utils/functional.py" />
-    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/django/urls/resolvers.py" />
-    <entry file="file://D:/Python/Lib/importlib/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="125" selection-start-line="125" selection-end-line="125" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/manage.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/trans/T_Base.py" />
-    <entry file="file://$PROJECT_DIR$/trans/Doc_Out/I have a dream_pdf.txt" />
-    <entry file="file://$PROJECT_DIR$/trans/Doc_Out/test_file_pdf.txt" />
-    <entry file="file://$PROJECT_DIR$/main.py" />
-    <entry file="file://$PROJECT_DIR$/trans/test1.py" />
-    <entry file="file://$PROJECT_DIR$/trans/static/js/pdf.worker.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/trans/T_Pdf_pdfminer.py" />
-    <entry file="file://$PROJECT_DIR$/trans/sign.js" />
-    <entry file="file://$PROJECT_DIR$/trans/baidusign.js" />
-    <entry file="file://$PROJECT_DIR$/trans/T_Docx.py" />
-    <entry file="file://D:/Python/Lib/wsgiref/simple_server.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="24" column="6" selection-start-line="24" selection-start-column="6" selection-end-line="24" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/trans/static/js/pdf.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1540">
-          <caret line="70" column="31" selection-start-line="70" selection-start-column="31" selection-end-line="70" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EasyTrans/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="20" selection-start-line="20" selection-end-line="20" />
-          <folding>
-            <element signature="e#633#665#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/trans/static/layui/css/modules/layer/default/icon.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -641,12 +536,6 @@
     <entry file="file://$PROJECT_DIR$/trans/models.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/trans/output_file/图片1.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/trans/output_file/图片2.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/trans/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="402">
@@ -657,10 +546,87 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/EasyTrans/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1007">
+          <caret line="25" column="12" selection-start-line="25" selection-start-column="12" selection-end-line="25" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trans/output_file/图片6.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trans/output_file/图片5.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trans/output_file/图片8.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trans/output_file/图片23.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trans/output_file/图片22.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trans/output_file/图片21.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trans/output_file/图片18.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trans/output_file/图片17.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trans/output_file/图片15.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trans/output_file/图片13.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trans/output_file/图片14.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trans/output_file/图片19.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trans/output_file/图片20.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trans/output_file/图片7.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trans/output_file/图片9.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trans/output_file/图片11.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trans/output_file/图片10.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/django/core/handlers/base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="767">
+          <caret line="114" selection-start-line="114" selection-end-line="115" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trans/output_file/图片1.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trans/output_file/图片3.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trans/output_file/图片2.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trans/output_file/图片4.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/trans/translate_func.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2134">
-          <caret line="11" column="14" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
+        <state relative-caret-position="1992">
+          <caret line="132" column="47" selection-start-line="132" selection-start-column="47" selection-end-line="132" selection-end-column="47" />
           <folding>
             <element signature="e#157#178#0" expanded="true" />
           </folding>
@@ -669,26 +635,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="286">
+          <caret line="49" column="36" selection-start-line="49" selection-start-column="36" selection-end-line="49" selection-end-column="36" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/trans/trans_to_pdf.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2935">
-          <caret line="61" column="35" selection-start-line="61" selection-start-column="35" selection-end-line="61" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EasyTrans/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
-          <caret line="25" column="12" lean-forward="true" selection-start-line="25" selection-start-column="12" selection-end-line="25" selection-end-column="12" />
+        <state relative-caret-position="237">
+          <caret line="208" column="15" selection-start-line="208" selection-start-column="15" selection-end-line="208" selection-end-column="15" />
         </state>
       </provider>
     </entry>

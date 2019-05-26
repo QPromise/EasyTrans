@@ -82,7 +82,7 @@ def youdao_translate(content):
         'keyfrom':'fanyi.web',
         'action':'FY_BY_CL1CKBUTTON',
         'typoResult':'true'}
-    data['i'] = content
+    data['i'] = content.replace('\n','')
     data = urllib.parse.urlencode(data).encode('utf-8')
     wy = urllib.request.urlopen(url,data)
     html = wy.read().decode('utf-8')
@@ -94,6 +94,8 @@ def youdao_translate(content):
 def google_translate(content):
     '''实现谷歌的翻译'''
 
+    content = content.replace('\n','')
+    print(content)
     js = Py4Js()
     tk = js.getTk(content)
     if len(content) > 4891:
@@ -126,8 +128,8 @@ def bing_translate(content): # 尽量保证翻译内容既有中文也有英文�
         return '输入请不要超过4891个字符！'
     url = 'https://cn.bing.com/ttranslate?&category=&IG=C4A52C35D175427988E6510779DEFB5F&IID=translator.5036.8'
     if is_Chinese(content):
-        res = requests.post(url, data={'text':content, 'from': 'zh-CHS', 'to': "en", 'doctype': 'json'}).json()['translationResponse']
+        res = requests.post(url, data={'text':content.replace('\n',''), 'from': 'zh-CHS', 'to': "en", 'doctype': 'json'}).json()['translationResponse']
     else:
-        res = requests.post(url, data={'text': content, 'from': 'en', 'to': "zh-CHS", 'doctype': 'json'}).json()['translationResponse']
+        res = requests.post(url, data={'text':content.replace('\n',''), 'from': 'en', 'to': "zh-CHS", 'doctype': 'json'}).json()['translationResponse']
     return res
 
