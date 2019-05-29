@@ -63,8 +63,8 @@ wcwidth==0.1.7
 ## 只使用pdf翻译
 > ### 如果只是想要拿来翻译论文的同学看这里
 * 下载该项目后记得将文件夹名由Easy-Trans-master改为EasyTrans。
-* 将要翻译的文件放到input_file这个目录中，将56行的代码最后的pdf名字修改为要翻译的pdf名字。
-* 运行[trans_file.py](https://github.com/QPromise/Easy-Trans/blob/master/trans_file.py)等代码执行结束，翻译后的文档就在output_file这个目录下面。
+* 将要翻译的文件放到[input_file](https://github.com/QPromise/Easy-Trans/tree/master/trans/input_file)这个目录中，将56行的代码最后的pdf名字修改为要翻译的pdf名字。
+* 运行[trans_file.py](https://github.com/QPromise/Easy-Trans/blob/master/trans_file.py)等代码执行结束，翻译后的文档就在[output_file](https://github.com/QPromise/Easy-Trans/tree/master/trans/output_file)这个目录下面。
 * 这里采用的是必应翻译，也可以自己修改为其它自己想用的翻译方式，也可以修改目录，方便自己运行翻译就可以了。如果有好的改进pdf翻译效果的建议或者问题联系qcs@stu.ouc.edu.cn。
 ## 在本地运行项目
 ### 1.克隆项目到本地(不使用git工具的话，直接下载就ok)
@@ -74,7 +74,7 @@ wcwidth==0.1.7
 ### 2.创建并激活虚拟环境（不使用可以跳过这里）
 强烈推荐在 Virtualenv 下进行 Django 的开发。Virtualenv 是一个 Python 工具，使用它可以创建一个独立的 Python 环境。<br>
 
-在命令行进入到保存虚拟环境的文件夹()，输入如下命令创建并激活虚拟环境：
+在命令行进入到保存虚拟环境的文件夹，输入如下命令创建并激活虚拟环境：
 <br>
 `C:\WINDOWS\system32>pip install virtualenv`
 <br>
