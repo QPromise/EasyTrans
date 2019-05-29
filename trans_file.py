@@ -21,9 +21,10 @@ from docx import Document
 from docx.shared import Inches
 from docx.oxml.ns import qn
 import sys
+
+
 root = sys.argv[0][0:sys.argv[0].find(':')+1]
 print('当前文件所在盘符:',root)
-
 
 def is_Chinese(content):       #判断输入的内容是否是中文
     for ch in content:
@@ -42,6 +43,7 @@ def bing_translate(content): # 尽量保证翻译内容既有中文也有英文�
     else:
         res = requests.post(url, data={'text':content.replace('\n',''), 'from': 'en', 'to': "zh-CHS", 'doctype': 'json'}).json()['translationResponse']
     return res
+
 # 正则匹配参考文献
 def is_reference(target):
     return re.match(r'references', target, re.I)
@@ -51,8 +53,7 @@ def is_figure(target):
     return re.match(r'fig\..\.', target, re.I)
 
 # 翻译文献到新的pdf以及word中
-
-path = root + r"\EasyTrans\trans\input_file\3_054.pdf"#这里改pdf的名字
+path = root + r"\EasyTrans\trans\input_file\test1.pdf"#这里改pdf的名字
 file_name = path.split("\\")[-1]
 print('当前翻译的pdf名字',file_name)
 t0 = time.time()
