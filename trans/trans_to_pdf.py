@@ -129,7 +129,7 @@ def trans_pdf(file_name, path):
                         # 当前块在参考文献之后
                         if reference_flag == 1:
                             trans_pragraph = blks[num][4].replace("\n", " ")
-                            res = translate_func.google_translate(trans_pragraph).replace(' ', '')
+                            res = translate_func.bing_translate(trans_pragraph).replace(' ', '')
                             new_page.insertTextbox(r, res, fontname="song", fontfile=os.path.join(settings.BASE_DIR,
                                                                                                   'trans/static/fonts/SimSun.ttf'),
                                                    fontsize=7, align=text_pos)  #
@@ -145,7 +145,7 @@ def trans_pdf(file_name, path):
                     else:
                         if flag == 1:
                             # img.drawRect(fitz.Rect(end[0],begin[1],end[2],end[3]))
-                            res = translate_func.google_translate(content).replace(' ', '')  # 翻译结果去掉汉字中的空格
+                            res = translate_func.bing_translate(content).replace(' ', '')  # 翻译结果去掉汉字中的空格
                             new_docx.add_paragraph(res)  # 添加到新的docx文档中
                             # print('content:',content)
                             # print(res)
@@ -165,7 +165,7 @@ def trans_pdf(file_name, path):
                             # img.drawRect(r)
                             trans_pragraph = blks[num][4].replace("\n", " ")  # 将待翻译的句子换行换成空格
                             if is_figure(trans_pragraph.replace(' ','')):  # 将该块的判断是否是图片标注
-                                res = translate_func.google_translate(trans_pragraph).replace(' ', '')  # 翻译结果去掉汉字中的空格
+                                res = translate_func.bing_translate(trans_pragraph).replace(' ', '')  # 翻译结果去掉汉字中的空格
                                 new_page.insertTextbox(r, res, fontname="song", fontfile=os.path.join(settings.BASE_DIR,
                                                                                                    'trans/static/fonts/SimSun.ttf'),
                                                     fontsize=7, align=fitz.TEXT_ALIGN_CENTER)
@@ -177,7 +177,7 @@ def trans_pdf(file_name, path):
                                                     fontsize=fonts, align=text_pos)
                             else:
                                 # 翻译结果去掉汉字中的空格
-                                res = translate_func.google_translate(trans_pragraph).replace(' ', '')
+                                res = translate_func.bing_translate(trans_pragraph).replace(' ', '')
                                 # 添加到新的docx文档中
                                 new_docx.add_paragraph(res)
                                 if reference_flag == 1:
@@ -215,3 +215,7 @@ def trans_pdf(file_name, path):
     new_pdf.save(new_file_name, garbage=4, deflate=True, clean=True)  # 保存翻译后的pdf
     t1 = time.time()
     print("Total translation time: %g sec" % (t1 - t0))
+if __name__ == '__main__':
+    file_name =123
+    path = 123
+    trans_pdf(file_name,path)
