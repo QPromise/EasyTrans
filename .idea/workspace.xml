@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="64eb2f37-4a40-4d88-b1c5-f89111f7696f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/trans/input_file/test1.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trans/trans_to_pdf.py" beforeDir="false" afterPath="$PROJECT_DIR$/trans/trans_to_pdf.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trans/translate_func.py" beforeDir="false" afterPath="$PROJECT_DIR$/trans/translate_func.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/trans_file.py" beforeDir="false" afterPath="$PROJECT_DIR$/trans_file.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,7 +21,7 @@
     <SUITE FILE_PATH="coverage/EasyTrans$test1.coverage" NAME="test1 Coverage Results" MODIFIED="1558064547419" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/trans" />
     <SUITE FILE_PATH="coverage/Easy_Trans$trans_to_pdf.coverage" NAME="trans_to_pdf Coverage Results" MODIFIED="1559113945514" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/trans" />
     <SUITE FILE_PATH="coverage/EasyTrans$trans_to_pdf.coverage" NAME="trans_to_pdf Coverage Results" MODIFIED="1558609848441" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/trans" />
-    <SUITE FILE_PATH="coverage/Easy_Trans$trans_file__2_.coverage" NAME="trans_file (2) Coverage Results" MODIFIED="1559122224583" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Easy_Trans$trans_file__2_.coverage" NAME="trans_file (2) Coverage Results" MODIFIED="1559637445916" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Easy_Trans$settings.coverage" NAME="settings Coverage Results" MODIFIED="1559117330865" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/EasyTrans" />
   </component>
   <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
@@ -30,29 +31,30 @@
     <session id="847330668">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="8" />
+          <entry key="project.closed" value="9" />
           <entry key="project.open.time.0" value="6" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.21" value="1" />
+          <entry key="project.open.time.37" value="1" />
           <entry key="project.open.time.4" value="1" />
           <entry key="project.open.time.5" value="1" />
           <entry key="project.open.time.560" value="1" />
-          <entry key="project.opened" value="12" />
+          <entry key="project.opened" value="13" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="15" />
           <entry key="html" value="3475" />
-          <entry key="py" value="5837" />
+          <entry key="py" value="5853" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="3475" />
           <entry key="PLAIN_TEXT" value="15" />
-          <entry key="Python" value="5837" />
+          <entry key="Python" value="5853" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -63,8 +65,8 @@
           <entry key="ico" value="1" />
           <entry key="js" value="5" />
           <entry key="md" value="1" />
-          <entry key="png" value="33" />
-          <entry key="py" value="59" />
+          <entry key="png" value="34" />
+          <entry key="py" value="61" />
           <entry key="sqlite3" value="1" />
           <entry key="txt" value="3" />
         </counts>
@@ -73,22 +75,22 @@
         <counts>
           <entry key="CSS" value="1" />
           <entry key="HTML" value="4" />
-          <entry key="Image" value="47" />
+          <entry key="Image" value="48" />
           <entry key="JavaScript" value="5" />
           <entry key="Markdown" value="1" />
           <entry key="PLAIN_TEXT" value="4" />
-          <entry key="Python" value="59" />
+          <entry key="Python" value="61" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/trans/trans_to_pdf.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="246">
-              <caret line="25" column="10" selection-start-line="25" selection-start-column="10" selection-end-line="25" selection-end-column="10" />
+            <state relative-caret-position="1136">
+              <caret line="134" column="37" selection-start-line="134" selection-start-column="37" selection-end-line="134" selection-end-column="37" />
               <folding>
                 <element signature="e#171#180#0" expanded="true" />
               </folding>
@@ -96,14 +98,16 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/EasyTrans/urls.py">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/trans_file.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-486">
-              <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
-              <folding>
-                <element signature="e#171#180#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="149">
+              <caret line="228" column="34" lean-forward="true" selection-start-line="228" selection-start-column="34" selection-end-line="228" selection-end-column="34" />
             </state>
           </provider>
         </entry>
@@ -120,7 +124,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/EasyTrans/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
+            <state relative-caret-position="528">
               <caret line="24" column="48" selection-start-line="24" selection-start-column="48" selection-end-line="24" selection-end-column="48" />
             </state>
           </provider>
@@ -129,8 +133,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/trans/translate_func.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="83">
-              <caret line="114" column="14" selection-start-line="19" selection-end-line="114" selection-end-column="14" />
+            <state relative-caret-position="124">
+              <caret line="96" column="38" lean-forward="true" selection-start-line="96" selection-start-column="38" selection-end-line="96" selection-end-column="38" />
               <folding>
                 <element signature="e#157#178#0" expanded="true" />
               </folding>
@@ -141,12 +145,19 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1043">
-              <caret line="184" selection-start-line="184" selection-end-line="184" />
+            <state relative-caret-position="220">
+              <caret line="16" column="30" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/trans/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="378">
+              <caret line="21" column="66" selection-start-line="21" selection-start-column="66" selection-end-line="21" selection-end-column="66" />
               <folding>
-                <element signature="e#8317#12761#0#HTML" />
-                <element signature="e#12824#12900#0#HTML" />
-                <element signature="e#12964#15767#0#HTML" />
+                <element signature="e#157#189#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -168,19 +179,19 @@
       <find>Doc_Out</find>
       <find>page2</find>
       <find>path</find>
-      <find>bing</find>
-      <find>google</find>
       <find>settings.base_dir</find>
       <find>base</find>
+      <find>bing</find>
+      <find>google</find>
     </findStrings>
     <replaceStrings>
       <replace>translate_func</replace>
       <replace>new_pdf</replace>
       <replace>output_file</replace>
       <replace>new_page</replace>
+      <replace>'E:\\EasyTrans\\'</replace>
       <replace>google</replace>
       <replace>bing</replace>
-      <replace>'E:\\EasyTrans\\'</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -200,13 +211,13 @@
         <option value="$PROJECT_DIR$/trans/tests.py" />
         <option value="$PROJECT_DIR$/trans/urls.py" />
         <option value="$PROJECT_DIR$/trans/views.py" />
-        <option value="$PROJECT_DIR$/templates/index.html" />
-        <option value="$PROJECT_DIR$/trans/translate_func.py" />
-        <option value="$PROJECT_DIR$/trans/trans_to_pdf.py" />
         <option value="$PROJECT_DIR$/EasyTrans/settings.py" />
         <option value="$PROJECT_DIR$/trans/trans_file.py" />
         <option value="$PROJECT_DIR$/trans/static/trans_file.py" />
+        <option value="$PROJECT_DIR$/templates/index.html" />
         <option value="$PROJECT_DIR$/trans_file.py" />
+        <option value="$PROJECT_DIR$/trans/translate_func.py" />
+        <option value="$PROJECT_DIR$/trans/trans_to_pdf.py" />
       </list>
     </option>
   </component>
@@ -275,19 +286,19 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\EasyTrans" />
-      <recent name="E:\EasyTrans\trans\static" />
-      <recent name="E:\EasyTrans\trans\static\images" />
-      <recent name="E:\EasyTrans\trans" />
-      <recent name="E:\EasyTrans\trans\translation" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\EasyTrans\trans\input_file" />
       <recent name="E:\EasyTrans\trans\static\fonts" />
       <recent name="E:\EasyTrans\trans\Doc_Out" />
       <recent name="E:\EasyTrans\trans\static\js" />
       <recent name="E:\EasyTrans\trans" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\EasyTrans" />
+      <recent name="E:\EasyTrans\trans\static" />
+      <recent name="E:\EasyTrans\trans\static\images" />
+      <recent name="E:\EasyTrans\trans" />
+      <recent name="E:\EasyTrans\trans\translation" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -303,74 +314,6 @@
     </option>
   </component>
   <component name="RunManager" selected="Python.trans_file (2)">
-    <configuration default="true" type="DjangoTestsConfigurationType" factoryName="Django tests">
-      <module name="Easy-Trans" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="TARGET" value="" />
-      <option name="SETTINGS_FILE" value="" />
-      <option name="CUSTOM_SETTINGS" value="false" />
-      <option name="USE_OPTIONS" value="false" />
-      <option name="OPTIONS" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="PyBehaveRunConfigurationType" factoryName="Behave">
-      <module name="Easy-Trans" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="ADDITIONAL_ARGS" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="PyLettuceRunConfigurationType" factoryName="Lettuce">
-      <module name="Easy-Trans" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="ADDITIONAL_ARGS" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
-      <module name="Easy-Trans" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="settings" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Easy-Trans" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -505,112 +448,6 @@
       <option name="customRunCommand" value="" />
       <method v="2" />
     </configuration>
-    <configuration default="true" type="Python.FlaskServer" factoryName="Flask server">
-      <module name="Easy-Trans" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="launchJavascriptDebuger" value="false" />
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="Tox" factoryName="Tox">
-      <module name="Easy-Trans" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="tests" factoryName="Doctests">
-      <module name="Easy-Trans" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_SCRIPT" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="tests" factoryName="Nosetests">
-      <module name="Easy-Trans" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="_new_regexPattern" value="&quot;&quot;" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;&quot;" />
-      <option name="_new_targetType" value="&quot;PATH&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="tests" factoryName="Twisted Trial">
-      <module name="Easy-Trans" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;&quot;" />
-      <option name="_new_targetType" value="&quot;PATH&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="tests" factoryName="Unittests">
-      <module name="Easy-Trans" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;&quot;" />
-      <option name="_new_targetType" value="&quot;PATH&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="tests" factoryName="py.test">
-      <module name="Easy-Trans" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="_new_keywords" value="&quot;&quot;" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;&quot;" />
-      <option name="_new_targetType" value="&quot;PATH&quot;" />
-      <method v="2" />
-    </configuration>
     <list>
       <item itemvalue="Django server.EasyTrans" />
       <item itemvalue="Python.trans_to_pdf" />
@@ -643,15 +480,14 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1456" height="876" extended-state="7" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23424068" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14040114" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.18353577" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.21727395" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39892185" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -660,7 +496,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.04723347" />
+      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.055330634" />
       <window_info anchor="bottom" id="Python Console" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -705,9 +541,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/trans/static/layui/css/modules/layer/default/icon-ext.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/trans/static/layui/css/modules/layer/default/loading-0.gif">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -776,16 +609,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/trans/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="18" column="35" selection-start-line="18" selection-start-column="35" selection-end-line="18" selection-end-column="35" />
-          <folding>
-            <element signature="e#157#189#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/trans/models.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -799,57 +622,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/trans/output_file/图片6.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/trans/output_file/图片5.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/trans/output_file/图片8.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/trans/output_file/图片23.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/trans/output_file/图片22.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/trans/output_file/图片21.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/trans/output_file/图片18.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/trans/output_file/图片17.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/trans/output_file/图片15.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/trans/output_file/图片13.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/trans/output_file/图片14.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/trans/output_file/图片19.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/trans/output_file/图片20.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/trans/output_file/图片7.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/trans/output_file/图片9.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/trans/output_file/图片11.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/trans/output_file/图片10.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/trans/output_file/图片6.png" />
+    <entry file="file://$PROJECT_DIR$/trans/output_file/图片5.png" />
+    <entry file="file://$PROJECT_DIR$/trans/output_file/图片8.png" />
+    <entry file="file://$PROJECT_DIR$/trans/output_file/图片23.png" />
+    <entry file="file://$PROJECT_DIR$/trans/output_file/图片22.png" />
+    <entry file="file://$PROJECT_DIR$/trans/output_file/图片21.png" />
+    <entry file="file://$PROJECT_DIR$/trans/output_file/图片18.png" />
+    <entry file="file://$PROJECT_DIR$/trans/output_file/图片17.png" />
+    <entry file="file://$PROJECT_DIR$/trans/output_file/图片15.png" />
+    <entry file="file://$PROJECT_DIR$/trans/output_file/图片13.png" />
+    <entry file="file://$PROJECT_DIR$/trans/output_file/图片14.png" />
+    <entry file="file://$PROJECT_DIR$/trans/output_file/图片19.png" />
+    <entry file="file://$PROJECT_DIR$/trans/output_file/图片20.png" />
+    <entry file="file://$PROJECT_DIR$/trans/output_file/图片7.png" />
+    <entry file="file://$PROJECT_DIR$/trans/output_file/图片9.png" />
+    <entry file="file://$PROJECT_DIR$/trans/output_file/图片11.png" />
+    <entry file="file://$PROJECT_DIR$/trans/output_file/图片10.png" />
     <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/django/core/handlers/base.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="767">
@@ -857,6 +646,9 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/trans/output_file/图片2.png" />
+    <entry file="file://$PROJECT_DIR$/trans/output_file/图片3.png" />
+    <entry file="file://$PROJECT_DIR$/trans/output_file/图片4.png" />
     <entry file="file://$PROJECT_DIR$/trans/tests.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="352">
@@ -864,61 +656,57 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/EasyTrans/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="24" column="48" selection-start-line="24" selection-start-column="48" selection-end-line="24" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="16" column="30" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/trans/output_file/图片1.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/trans/output_file/图片2.png">
-      <provider selected="true" editor-type-id="images" />
+    <entry file="file://$PROJECT_DIR$/EasyTrans/urls.py">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/trans/output_file/图片3.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/trans/output_file/图片4.png">
-      <provider selected="true" editor-type-id="images" />
+    <entry file="file://$PROJECT_DIR$/trans/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="21" column="66" selection-start-line="21" selection-start-column="66" selection-end-line="21" selection-end-column="66" />
+          <folding>
+            <element signature="e#157#189#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/trans/translate_func.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="83">
-          <caret line="114" column="14" selection-start-line="19" selection-end-line="114" selection-end-column="14" />
+        <state relative-caret-position="124">
+          <caret line="96" column="38" lean-forward="true" selection-start-line="96" selection-start-column="38" selection-end-line="96" selection-end-column="38" />
           <folding>
             <element signature="e#157#178#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/trans/trans_to_pdf.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="25" column="10" selection-start-line="25" selection-start-column="10" selection-end-line="25" selection-end-column="10" />
-          <folding>
-            <element signature="e#171#180#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1043">
-          <caret line="184" selection-start-line="184" selection-end-line="184" />
-          <folding>
-            <element signature="e#8317#12761#0#HTML" />
-            <element signature="e#12824#12900#0#HTML" />
-            <element signature="e#12964#15767#0#HTML" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EasyTrans/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="24" column="48" selection-start-line="24" selection-start-column="48" selection-end-line="24" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/trans_file.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-486">
-          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+        <state relative-caret-position="149">
+          <caret line="228" column="34" lean-forward="true" selection-start-line="228" selection-start-column="34" selection-end-line="228" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trans/trans_to_pdf.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1136">
+          <caret line="134" column="37" selection-start-line="134" selection-start-column="37" selection-end-line="134" selection-end-column="37" />
           <folding>
             <element signature="e#171#180#0" expanded="true" />
           </folding>

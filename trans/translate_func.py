@@ -94,7 +94,7 @@ def youdao_translate(content):
 def google_translate(content):
     '''实现谷歌的翻译'''
 
-    content = content
+    content = content.replace('\n','')
     print(content)
     js = Py4Js()
     tk = js.getTk(content)

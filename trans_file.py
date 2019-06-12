@@ -53,7 +53,7 @@ def is_figure(target):
     return re.match(r'fig\..\.', target, re.I)
 
 # 翻译文献到新的pdf以及word中
-path = root + r"\EasyTrans\trans\input_file\test1.pdf"#这里改pdf的名字
+path = root + r"\EasyTrans\trans\input_file\_system_appendPDF_proof_hi.pdf"#这里改pdf的名字
 file_name = path.split("\\")[-1]
 print('当前翻译的pdf名字',file_name)
 t0 = time.time()

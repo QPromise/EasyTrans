@@ -121,7 +121,7 @@ def download_pdf(request):
         os.remove(path)  # 下载pdf之后就移除
         return response
     except:
-        return HttpResponse('2')
+        return HttpResponse('服务器端已经删除，无法下载，请重新上传翻译！')
 
 # 下载翻译后的docx
 @csrf_exempt
@@ -143,6 +143,6 @@ def download_docx(request):
         os.remove(path)  # 下载docx之后就移除
         return response
     except:
-        return HttpResponse('无法下载')
+        return HttpResponse('服务器端已经删除，无法下载，请重新上传翻译！')
 
 
