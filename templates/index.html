@@ -5,10 +5,10 @@
     <meta charset="utf-8" http-equiv="Access-Control-Allow-Origin">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>EasyTrans</title>
-    <link rel="shortcut icon" type="image/x-icon" href="{% static 'images/title.ico' %}" />
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'images/title.ico' %}"/>
     <link rel="stylesheet" href="{% static 'layui/css/layui.css' %}">
 </head>
-<body class="layui-layout-body" >
+<body class="layui-layout-body">
 <div class="layui-layout layui-layout-admin">
     <div class="layui-header">
         <div class="layui-logo" style="font-size: xx-large;font-family: Arial;">EasyTrans</div>
@@ -46,8 +46,8 @@
                                 <option value="3">必应</option>
                                 <option value="1">谷歌</option>
                                 <option value="2">有道</option>
-{#                                <option value="4">搜狗（未实现）</option>#}
-{#                                <option value="5">百度（未实现）</option>#}
+                                {#                                <option value="4">搜狗（未实现）</option>#}
+                                {#                                <option value="5">百度（未实现）</option>#}
                             </select>
                         </div>
                         <div class="layui-input-inline">
@@ -65,10 +65,13 @@
                             </div>
                             <div class="layui-col-sm5" style="float: right;">
                                 <div class="layui-card">{{ error_msg }}
-                                    <textarea id="trans_area" disabled="" name="" style="height: 180px;"
+                                    <textarea id="trans_area" name="trans_area" readonly="readonly" style="height: 180px;"
                                               placeholder="译文内容"
                                               class="layui-textarea"></textarea>
                                 </div>
+                                <button class="layui-btn layui-btn-primary layui-btn-sm" onclick="copyContent()"
+                                        style="float: right;">copy
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -108,7 +111,8 @@
                 <hr>
             </div>
             <div class="layui-form-item">
-                <blockquote class="layui-elem-quote layui-col-sm11" style="font-size: small">有道和必应支持双译，谷歌以及文档翻译只支持英译汉，其他功能还在实现中。
+                <blockquote class="layui-elem-quote layui-col-sm11" style="font-size: small">
+                    有道和必应支持双译，谷歌以及文档翻译只支持英译汉，其他功能还在实现中。
                 </blockquote>
             </div>
         </div>
@@ -120,6 +124,15 @@
         function reset() {
             $("#text_area").val('');
             $("#trans_area").val('');
+        }
+
+        function copyContent() {
+            // 获取Dom节点
+            var trans_area = document.getElementById('trans_area');
+            //  用select函数将文本内容选中
+            trans_area.select();
+            document.execCommand('copy');
+            //alert('复制成功');
         }
 
         //单词，句子or段落翻译
