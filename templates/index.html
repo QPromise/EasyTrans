@@ -50,10 +50,12 @@
                                 {#                                <option value="5">百度（未实现）</option>#}
                             </select>
                         </div>
-                        <div class="layui-input-inline">
-                            <button onclick="trans()" class="layui-btn">立即翻译</button>
-                            <button onclick="reset()" type="reset" class="layui-btn layui-btn-primary">重置</button>
-                        </div>
+
+                        <button onclick="trans()" class="layui-btn">立即翻译</button>
+                        <button onclick="correction()" class="layui-btn">格式矫正</button>
+                        <button onclick="reset()" type="reset" class="layui-btn layui-btn-primary">重置</button>
+
+
                     </div>
                     <div class="layui-form-item">
                     </div>
@@ -65,7 +67,8 @@
                             </div>
                             <div class="layui-col-sm5" style="float: right;">
                                 <div class="layui-card">{{ error_msg }}
-                                    <textarea id="trans_area" name="trans_area" readonly="readonly" style="height: 180px;"
+                                    <textarea id="trans_area" name="trans_area" readonly="readonly"
+                                              style="height: 180px;"
                                               placeholder="译文内容"
                                               class="layui-textarea"></textarea>
                                 </div>
@@ -133,6 +136,24 @@
             trans_area.select();
             document.execCommand('copy');
             //alert('复制成功');
+        }
+
+        function correction() {
+            var content = $("#text_area").val();
+            if (content == '') {
+                layer.msg('请先输入要纠正的内容', {icon: 5});
+            }
+            else {//
+                $.ajax({
+                    url: "{% url "content_correction" %} ",
+                    type: "post",
+                    data: {"content": content},
+                    success: function (data) {
+                        $("#trans_area").val(data);
+
+                    }
+                })
+            }
         }
 
         //单词，句子or段落翻译

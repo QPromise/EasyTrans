@@ -23,5 +23,6 @@ urlpatterns = [
     url(r'^upload_trans/$', views.upload_trans, name='upload_trans'),
     url(r'^download_pdf/$', views.download_pdf, name='download_pdf'),
     url(r'^download_docx/$', views.download_docx, name='download_docx'),
+    url(r'^content_correction/$', views.content_correction, name='content_correction'),
 
 ]

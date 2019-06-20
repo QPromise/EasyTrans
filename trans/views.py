@@ -24,6 +24,18 @@ from django.http import StreamingHttpResponse
 def index(request):
     return render(request,'index.html')
 
+#用于解决复制论文中的中文时的格式问题
+@csrf_exempt
+def content_correction(request):
+    if request.method == "GET":
+        return render(request, "index.html")
+    else:
+        content = request.POST.get("content")
+        content = content.replace('\n', '') #去除换行符
+        content = content.replace(' ','') #去掉文字中的空格
+        content = content.replace(',', '，') #英文逗号替换为中文逗号
+    return HttpResponse(content)
+
 # 谷歌翻译调用 方法接口在 translate_func.py文件中
 @csrf_exempt
 def google_trans(request):
