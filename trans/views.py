@@ -34,7 +34,16 @@ def content_correction(request):
         content = content.replace('\n', '') #去除换行符
         content = content.replace(' ','') #去掉文字中的空格
         content = content.replace(',', '，') #英文逗号替换为中文逗号
-    return HttpResponse(content)
+        # 实现全角到半角的转换
+        res = ""
+        for uchar in content:
+            inside_code = ord(uchar)
+            if inside_code == 12288:  # 全角空格直接转换
+                inside_code = 32
+            elif (inside_code >= 65281 and inside_code <= 65374):  # 全角字符（除空格）根据关系转化
+                inside_code -= 65248
+            res += chr(inside_code)
+    return HttpResponse(res)
 
 # 谷歌翻译调用 方法接口在 translate_func.py文件中
 @csrf_exempt

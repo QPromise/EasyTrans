@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="64eb2f37-4a40-4d88-b1c5-f89111f7696f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trans/trans_to_pdf.py" beforeDir="false" afterPath="$PROJECT_DIR$/trans/trans_to_pdf.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trans/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/trans/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/trans/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/trans/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -48,14 +45,14 @@
         <counts>
           <entry key="dummy" value="15" />
           <entry key="html" value="3749" />
-          <entry key="py" value="6053" />
+          <entry key="py" value="6188" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="3749" />
           <entry key="PLAIN_TEXT" value="15" />
-          <entry key="Python" value="6053" />
+          <entry key="Python" value="6188" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -67,7 +64,7 @@
           <entry key="js" value="5" />
           <entry key="md" value="1" />
           <entry key="png" value="34" />
-          <entry key="py" value="62" />
+          <entry key="py" value="63" />
           <entry key="sqlite3" value="1" />
           <entry key="txt" value="3" />
         </counts>
@@ -80,7 +77,7 @@
           <entry key="JavaScript" value="5" />
           <entry key="Markdown" value="1" />
           <entry key="PLAIN_TEXT" value="4" />
-          <entry key="Python" value="62" />
+          <entry key="Python" value="63" />
         </counts>
       </usages-collector>
     </session>
@@ -90,11 +87,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/trans/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-242">
-              <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
+            <state relative-caret-position="352">
+              <caret line="43" column="36" selection-start-line="43" selection-start-column="36" selection-end-line="43" selection-end-column="36" />
               <folding>
-                <marker date="1561037053191" expanded="true" signature="500:984" ph="..." />
-                <marker date="1561037053191" expanded="true" signature="900:935" ph="..." />
+                <marker date="1561193663303" expanded="true" signature="500:1325" ph="..." />
+                <marker date="1561193663303" expanded="true" signature="1245:1276" ph="..." />
               </folding>
             </state>
           </provider>
@@ -496,7 +493,7 @@
     <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20845272" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20845272" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -510,7 +507,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.1268556" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.2388664" />
       <window_info anchor="bottom" id="Python Console" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -530,12 +527,12 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/trans/views.py</url>
-          <line>40</line>
+          <line>49</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/trans/views.py</url>
-          <line>52</line>
+          <line>61</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -555,9 +552,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/trans/static/layui/css/modules/layer/default/loading-0.gif">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/trans/static/layui/css/modules/layer/default/loading-1.gif">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -715,13 +709,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/django/core/servers/basehttp.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="188">
+          <caret line="115" selection-start-line="115" selection-end-line="115" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/trans/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-242">
-          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
+        <state relative-caret-position="352">
+          <caret line="43" column="36" selection-start-line="43" selection-start-column="36" selection-end-line="43" selection-end-column="36" />
           <folding>
-            <marker date="1561037053191" expanded="true" signature="500:984" ph="..." />
-            <marker date="1561037053191" expanded="true" signature="900:935" ph="..." />
+            <marker date="1561193663303" expanded="true" signature="500:1325" ph="..." />
+            <marker date="1561193663303" expanded="true" signature="1245:1276" ph="..." />
           </folding>
         </state>
       </provider>
