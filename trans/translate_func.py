@@ -138,6 +138,7 @@ def bing_translate(content): # 尽量保证翻译内容既有中文也有英文�
 
 # 百度翻译方法
 def baidu_translate(content):
+    print(content)
     if len(content) > 4891:
         return '输入请不要超过4891个字符！'
     salt = str(random.randint(0, 50))
@@ -155,4 +156,5 @@ def baidu_translate(content):
     j = requests.get('http://api.fanyi.baidu.com/api/trans/vip/translate', head)
     print(j.json())
     res = j.json()['trans_result'][0]['dst']
-    return res
+    print(res)
+    return str(res)
