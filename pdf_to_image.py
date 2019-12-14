@@ -1,16 +1,15 @@
-"""
-_*_coding:utf-8 _*_
+'''
+@Author  :  leoqin
 
-@Time    :2019/12/13 21:15
+@Contact :  qcs@stu.ouc.edu.cn
 
-@Author  :leoqin
+@Software:  Pycharm
 
-@FileName: pdf_to_image.py
+@Time    :  May 29,2019
 
-@Software: PyCharm
+@Desc    :  pdf转换为图片
 
-@function: pdf转换为图片
-"""
+'''
 import os
 import fitz  # 导入的是fitz
 
