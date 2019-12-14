@@ -9,7 +9,7 @@
 
 @Time    :  May 29,2019
 
-@Desc    :  pdf必应翻译，将要翻译的pdf放到input_file目录下，然后记得改56行path最后的pdf名字
+@Desc    :  pdf必应翻译，将要翻译的pdf放到input_file目录下，然后记得改39行path最后的pdf名字
 
 '''
 import os
