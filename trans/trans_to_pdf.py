@@ -230,7 +230,3 @@ def trans_pdf(file_name, path):
     t1 = time.time()
     print("Total translation time: %g sec" % (t1 - t0))
     return 'success'
-if __name__ == '__main__':
-    file_name =123
-    path = 123
-    trans_pdf(file_name,path)
