@@ -2,10 +2,10 @@
 _*_coding:utf-8 _*_
 
 @Time    :2019/12/13 21:15
-@Author  :csqin 
+@Author  :leoqin
 @FileName: pdf_to_image.py
 @Software: PyCharm
-
+@function: pdf转换为图片
 """
 import os
 import fitz  # 导入的是fitz

@@ -21,28 +21,11 @@ from docx import Document
 from docx.shared import Inches
 from docx.oxml.ns import qn
 import sys
-
+from trans import translate_func
 
 root = sys.argv[0][0:sys.argv[0].find(':')+1]
 print('当前文件所在盘符:',root)
 
-def is_Chinese(content):       #判断输入的内容是否是中文
-    for ch in content:
-        if '\u4e00' <= ch <= '\u9fff':
-            return True
-        else:
-            return False
-
-# 必应翻译方法
-def google_translate(content): # 尽量保证翻译内容既有中文也有英文的情况，判断没考虑此情况。
-    if len(content) > 4891:
-        return '输入请不要超过4891个字符！'
-    url = 'https://cn.google.com/ttranslate?&category=&IG=C4A52C35D175427988E6510779DEFB5F&IID=translator.5036.8'
-    if is_Chinese(content):
-        res = requests.post(url, data={'text':content.replace('\n',''), 'from': 'zh-CHS', 'to': "en", 'doctype': 'json'}).json()['translationResponse']
-    else:
-        res = requests.post(url, data={'text':content.replace('\n',''), 'from': 'en', 'to': "zh-CHS", 'doctype': 'json'}).json()['translationResponse']
-    return res
 
 # 正则匹配参考文献
 def is_reference(target):
@@ -153,7 +136,7 @@ try:
                     # 当前块在参考文献之后
                     if reference_flag == 1:
                         trans_pragraph = blks[num][4].replace("\n", " ")
-                        res = google_translate(trans_pragraph).replace(' ', '')
+                        res = translate_func.google_translate(trans_pragraph).replace(' ', '')
                         new_page.insertTextbox(r, res, fontname="song", fontfile=os.path.join(root,'\EasyTrans',
                                                                                               'trans/static/fonts/SimSun.ttf'),
                                                fontsize=7, align=text_pos)  #
@@ -169,7 +152,7 @@ try:
                 else:
                     if flag == 1:
                         # img.drawRect(fitz.Rect(end[0],begin[1],end[2],end[3]))
-                        res = google_translate(content).replace(' ', '')  # 翻译结果去掉汉字中的空格
+                        res = translate_func.google_translate(content).replace(' ', '')  # 翻译结果去掉汉字中的空格
                         new_docx.add_paragraph(res)  # 添加到新的docx文档中
                         # print('content:',content)
                         # print(res)
@@ -189,7 +172,7 @@ try:
                         # img.drawRect(r)
                         trans_pragraph = blks[num][4].replace("\n", " ")  # 将待翻译的句子换行换成空格
                         if is_figure(trans_pragraph.replace(' ','')):  # 将该块的判断是否是图片标注
-                            res = google_translate(trans_pragraph).replace(' ', '')  # 翻译结果去掉汉字中的空格
+                            res = translate_func.google_translate(trans_pragraph).replace(' ', '')  # 翻译结果去掉汉字中的空格
                             new_page.insertTextbox(r, res, fontname="song", fontfile=os.path.join(root,'\EasyTrans',
                                                                                                'trans/static/fonts/SimSun.ttf'),
                                                 fontsize=7, align=fitz.TEXT_ALIGN_CENTER)
@@ -201,7 +184,7 @@ try:
                                                 fontsize=fonts, align=text_pos)
                         else:
                             # 翻译结果去掉汉字中的空格
-                            res = google_translate(trans_pragraph).replace(' ', '')
+                            res = translate_func.google_translate(trans_pragraph).replace(' ', '')
                             # 添加到新的docx文档中
                             new_docx.add_paragraph(res)
                             if reference_flag == 1:
