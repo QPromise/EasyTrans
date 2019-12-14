@@ -1,0 +1,390 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" http-equiv="Access-Control-Allow-Origin">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>EasyTrans</title>
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'images/title.ico' %}"/>
+    <link rel="stylesheet" href="{% static 'layui/css/layui.css' %}">
+</head>
+<body class="layui-layout-body">
+<div class="layui-layout layui-layout-admin">
+    <div class="layui-header">
+        <div class="layui-logo" style="font-size: xx-large;font-family: Arial;">EasyTrans</div>
+        <!-- 头部区域（可配合layui已有的水平导航） -->
+        <ul class="layui-nav layui-layout-left">
+            <li class="layui-nav-item"><a href="#">本站公告</a></li>
+            <li class="layui-nav-item"><a href="#">建议</a></li>
+        </ul>
+        {#        <ul class="layui-nav layui-layout-right">#}
+        {#            <li class="layui-nav-item">#}
+        {#                <a href="javascript:;">#}
+        {#                    <img src="http://t.cn/RCzsdCq" class="layui-nav-img">#}
+        {#                    登录#}
+        {#                </a>#}
+        {#                <dl class="layui-nav-child">#}
+        {#                    <dd><a href="#">基本资料</a></dd>#}
+        {#                    <dd><a href="#">安全设置</a></dd>#}
+        {#                </dl>#}
+        {#            </li>#}
+        {#            <li class="layui-nav-item"><a href="#">退出</a></li>#}
+        {#        </ul>#}
+    </div>
+
+
+    <div class="layui-body">
+        <!-- 内容主体区域 -->
+        <div style="padding: 15px;">
+            <div class="layui-card layui-form" style="font-size: larger">
+                <div class="layui-card-body layui-row layui-col-sm12 layui-col-space12">
+                    <div class="layui-form-item">
+                    </div>
+                    <div class="layui-form-item">
+                        <div class="layui-input-inline">
+                            <select id="trans_tools" name="city">
+{#                                <option value="3">必应</option>#}
+                                <option value="1">谷歌</option>
+                                <option value="2">有道</option>
+                                <option value="4">百度</option>
+                            </select>
+                        </div>
+
+                        <button onclick="trans()" class="layui-btn">立即翻译</button>
+                        <button onclick="correction()" class="layui-btn">格式矫正</button>
+                        <button onclick="reset()" type="reset" class="layui-btn layui-btn-primary">重置</button>
+
+
+                    </div>
+                    <div class="layui-form-item">
+                    </div>
+                    <div class="layui-col-sm11" style="padding: 20px; background-color: #F2F2F2;">
+                        <div class="layui-form-item">
+                            <div class=" layui-col-sm6">
+                                <textarea id="text_area" name="other" style="height: 180px;" placeholder="请在此输入要翻译的内容"
+                                          class="layui-textarea"></textarea>
+                            </div>
+                            <div class="layui-col-sm5" style="float: right;">
+                                <div class="layui-card">{{ error_msg }}
+                                    <textarea id="trans_area" name="trans_area" readonly="readonly"
+                                              style="height: 180px;"
+                                              placeholder="译文内容"
+                                              class="layui-textarea"></textarea>
+                                </div>
+                                <button class="layui-btn layui-btn-primary layui-btn-sm" onclick="copyContent()"
+                                        style="float: right;">copy
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-col-md11">
+                <div class="layui-card">
+                    <div class="layui-card-header" style="font-size: larger">上传需要翻译的文件(当前仅限英译汉)</div>
+                    <div class="layui-card-body">
+                        <div class="layui-upload-drag" id="test-upload-drag">
+                            <i class="layui-icon"></i>
+                            <p>点击上传</p>
+                        </div>
+                        <div id="upload-list" class="layui-upload-list layui-hide">
+                            <table class="layui-table">
+                                <thead>
+                                <tr>
+                                    <th>文件名</th>
+                                    <th>大小</th>
+                                    <th>状态</th>
+                                    <th>操作</th>
+                                </tr>
+                                </thead>
+                                <tbody id="test-upload-demoList"></tbody>
+                            </table>
+                        </div>
+                        <div class="layui-form-item"></div><!--占位-->
+                        <div class="layui-input-inline">
+                            {#                            <button id="preview" class=" layui-btn " data-type="preview">在线预览</button>#}
+                            {#                            <button id="begain_trans" type="button" class="layui-btn">开始翻译</button>#}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="layui-card-body layui-col-sm11">
+                <hr>
+            </div>
+            <div class="layui-form-item">
+                <blockquote class="layui-elem-quote layui-col-sm11" style="font-size: small">
+                    有道和必应支持双译，谷歌以及文档翻译只支持英译汉，其他功能还在实现中。
+                </blockquote>
+            </div>
+        </div>
+    </div>
+    <script src="{% static 'layui/layui.js' %}"></script>
+    <script src="{% static 'js/jquery-2.1.3.min.js' %}"></script>
+    <script>
+        //清空输入框
+        function reset() {
+            $("#text_area").val('');
+            $("#trans_area").val('');
+        }
+
+        function copyContent() {
+            // 获取Dom节点
+            var trans_area = document.getElementById('trans_area');
+            //  用select函数将文本内容选中
+            trans_area.select();
+            document.execCommand('copy');
+            //alert('复制成功');
+        }
+
+        function correction() {
+            var content = $("#text_area").val();
+            if (content == '') {
+                layer.msg('请先输入要纠正的内容', {icon: 5});
+            }
+            else {//
+                $.ajax({
+                    url: "{% url "content_correction" %} ",
+                    type: "post",
+                    data: {"content": content},
+                    success: function (data) {
+                        $("#trans_area").val(data);
+
+                    }
+                })
+            }
+        }
+
+        //单词，句子or段落翻译
+        function trans() {
+            var flag = $("#trans_tools").val();
+            var content = $("#text_area").val();
+            if (content == '') {
+                layer.msg('请先输入要翻译的内容', {icon: 5});
+            }
+            else if (flag == 1) {//谷歌翻译
+                $.ajax({
+                    url: "{% url "google_trans" %} ",
+                    type: "post",
+                    data: {"content": content},
+                    success: function (data) {
+                        $("#trans_area").val(data);
+
+                    }
+                })
+            }
+            else if (flag == 2) {//有道翻译
+                url_str = "youdao_trans";
+                console.log(url_str);
+                $.ajax({
+                    url: "{% url "youdao_trans" %} ",
+                    type: "post",
+                    data: {"content": content},
+                    success: function (data) {
+                        $("#trans_area").val(data);
+
+                    }
+                })
+            }
+            else if (flag == 3) {//必应翻译
+                url_str = "bing_trans";
+                console.log(url_str);
+                $.ajax({
+                    url: "{% url "bing_trans" %} ",
+                    type: "post",
+                    data: {"content": content},
+                    success: function (data) {
+                        $("#trans_area").val(data);
+
+                    }
+                })
+            }
+            else if (flag == 4) {//百度翻译
+                url_str = "baidu_trans";
+                console.log(url_str);
+                $.ajax({
+                    url: "{% url "baidu_trans" %} ",
+                    type: "post",
+                    data: {"content": content},
+                    success: function (data) {
+                        $("#trans_area").val(data);
+
+                    }
+                })
+            }
+            else {
+                layer.msg('该方法还未实现，请选择其它翻译软件。', {icon: 5});
+            }
+
+        }//$("#text_area").change(trans);//实现输入动态实时翻译
+
+        //初始登录与预览上传文件效果
+        layui.use(['layer', 'form'], function () {
+            var layer = layui.layer
+                , form = layui.form;
+            layer.msg('Welcome to EasyTrans!');//进入主页面的显示
+        });
+        //上传文件到后台,包括上传成功后的预览,翻译,删除,翻译完成后可以进行查看以及下载。
+        var demoListView = $('#test-upload-demoList');
+        layui.use(['upload'], function () {
+            var $ = layui.jquery
+                , upload = layui.upload;
+            upload.render({
+                elem: '#test-upload-drag'
+                , method: "post"
+                , url: '/upload_func/'
+                , multiple: true
+                , accept: 'file' //普通文件
+                , choose: function (obj) {
+                    var files = this.files = obj.pushFile(); //将每次选择的文件追加到文件队列
+                    console.log(files);
+                    //读取本地文件
+                    obj.preview(function (index, file, result) {
+                        var tr = $(['<tr id="upload-' + index + '">'
+                            , '<td>' + file.name + '</td>'
+                            , '<td>' + (file.size / 1014).toFixed(1) + 'kb</td>'
+                            , '<td></td>'
+                            , '<td>'
+                            , '<button class="layui-btn layui-btn-mini upload-preview">预览</button>'
+                            , '<button class="layui-btn layui-btn-mini upload-trans ">翻译</button>'
+                            , '<button class="layui-btn layui-btn-mini layui-btn-danger upload-delete">删除</button>'
+                            , '<button class="layui-btn layui-btn-mini layui-btn-danger view-content">查看</button>'//翻译完成后显示
+                            , '<button class="layui-btn layui-btn-mini layui-btn-danger download-pdf">下载pdf版</button>'//翻译完成之后显示
+                            , '<button class="layui-btn layui-btn-mini layui-btn-danger download-docx">下载word版</button>'//翻译完成之后显示
+                            , '</td>'
+                            , '</tr>'].join(''));
+                        //翻译
+                        tr.find('.upload-trans').on('click', function () {
+                            var translating = layer.load(2);//翻译的加载动画
+                            $.ajax({
+                                url: "{% url "upload_trans" %} ",
+                                type: "post",
+                                data: {"file_name": file.name},//传当前文件名到后台
+                                success: function (data) {
+                                    $("#trans_area").val(data);//在该区域显示后台传过来的数据
+
+                                },
+                                complete:function (data) {
+
+                                    var flag = data.responseText;
+                                    if (flag == "fail"){
+                                        console.log(data.responseText);
+                                        layer.close(translating);
+                                        layer.alert('翻译失败，可能pdf翻译过程出了问题', {
+                                        skin: 'layui-layer-molv'
+                                        , closeBtn: 0
+                                    });
+                                    }
+                                    else if (flag == "success"){
+                                        var tr = demoListView.find('tr#upload-' + index), tds = tr.children();
+                                        tds.eq(2).html('<span style="color: #5FB878;">翻译已完成</span>');
+                                        tds.eq(3).find('.upload-trans').addClass('layui-hide'); //隐藏翻译按钮
+                                        tds.eq(3).find('.upload-preview').addClass('layui-hide'); //隐藏预览按钮
+                                        tds.eq(3).find('.upload-delete').addClass('layui-hide'); //隐藏删除按钮
+                                        tds.eq(3).find('.view-content').removeClass('layui-hide'); //除去隐藏查看翻译后的文档按钮
+                                        tds.eq(3).find('.download-pdf').removeClass('layui-hide'); //除去隐藏下载pdf按钮
+                                        tds.eq(3).find('.download-docx').removeClass('layui-hide'); //除去隐藏下载docx按钮
+                                        layer.close(translating);
+                                        layer.alert('翻译已完成，可以下载pdf及word文档，下载后服务器文档将会删除。', {
+                                            skin: 'layui-layer-molv'
+                                            , closeBtn: 0
+                                        });
+                                }
+                                else{
+                                    layer.close(translating);
+                                    layer.alert('请检查上传的是否为pdf文件', {
+                                        skin: 'layui-layer-molv'
+                                        , closeBtn: 0
+                                    });
+                                    }
+
+                                }
+                            })
+                            //obj.upload(index, file);
+                        });
+                        //预览
+                        tr.find('.upload-preview').on('click', function () {
+
+                        });
+                        //删除
+                        tr.find('.upload-delete').on('click', function () {
+                            delete files[index]; //删除对应的文件
+                            tr.remove();
+                            uploadListIns.config.elem.next()[0].value = ''; //清空 input file 值，以免删除后出现同名文件不可选
+                        });
+                        //查看翻译完成的文档
+                        tr.find('.view-content').on('click', function () {
+                            layer.msg("查看翻译的文档未实现", {icon: 5});
+                            //}
+                        });
+                        ;
+                        //下载pdf
+                        tr.find('.download-pdf').on('click', function () {
+                            location.href = "/download_pdf/?file_name=" + file.name;
+                        });
+                        //下载docx
+                        tr.find('.download-docx').on('click', function () {
+                            location.href = "/download_docx/?file_name=" + file.name;
+                        });
+                        demoListView.append(tr);
+                    });
+                }
+                , before:
+
+                    function (obj) {
+                        layer.load(); //上传时loading动画
+                    }
+                ,
+                done: function (data, index) {
+                    $('#upload-list').removeClass('layui-hide');//关闭列表隐藏
+                    layer.closeAll('loading'); //关闭loading
+                    if (data == 1) {//状态1代表上传成功
+                        //console.log(index);
+                        var tr = demoListView.find('tr#upload-' + index)
+                            , tds = tr.children();
+                        tds.eq(2).html('<span style="color: #5FB878;">上传成功</span>');
+                        tds.eq(3).find('.view-content').addClass('layui-hide'); //隐藏查看翻译后的文档按钮
+                        tds.eq(3).find('.download-pdf').addClass('layui-hide'); //隐藏下载pdf按钮
+                        tds.eq(3).find('.download-docx').addClass('layui-hide'); //除去隐藏下载pdf按钮
+                        //tds.eq(3).html(''); //清空操作
+                        layer.msg('上传成功,可以点击翻译按钮开始翻译。', {icon: 1});
+                        return delete this.files[index]; //删除文件队列已经上传成功的文件
+                    }
+                    else if (data == 0) {//状态0代表文件存在
+                        var tr = demoListView.find('tr#upload-' + index)
+                            , tds = tr.children();
+                        tds.eq(2).html('<span style="color: #5FB878;">文件已存在</span>');
+                        //tds.eq(3).find('.upload-trans').addClass('layui-hide'); //隐藏翻译按钮
+                        tds.eq(3).find('.view-content').addClass('layui-hide'); //隐藏查看翻译后的文档按钮
+                        tds.eq(3).find('.download-pdf').addClass('layui-hide'); //隐藏下载pdf按钮
+                        tds.eq(3).find('.download-docx').addClass('layui-hide'); //隐藏下载docx按钮
+                        layer.msg('可以直接开始翻译。', {icon: 1});
+                        return delete this.files[index]; //删除文件队列已经上传失败的文件
+                    }
+                    else if (data == 2) {//状态2代表文件格式不符合要求
+                        //console.log(index);
+                        var tr = demoListView.find('tr#upload-' + index)
+                            , tds = tr.children();
+                        tds.eq(2).html('<span style="color: #FF5722;">文件不符合格式要求</span>');
+                        tds.eq(3).find('.upload-trans').addClass('layui-hide'); //隐藏翻译按钮
+                        tds.eq(3).find('.upload-preview').addClass('layui-hide'); //隐藏预览按钮
+                        tds.eq(3).find('.view-content').addClass('layui-hide'); //隐藏查看翻译后的文档按钮
+                        tds.eq(3).find('.download-pdf').addClass('layui-hide'); //隐藏下载pdf按钮
+                        tds.eq(3).find('.download-docx').addClass('layui-hide'); //隐藏下载docx按钮
+                        layer.msg('文件不符合格式要求,请重新上传。', {icon: 5});
+                        return delete this.files[index]; //删除文件队列已经上传失败的文件
+                    }
+                    else {
+                        layer.msg("上传失败  " + data.msg, {icon: 5});
+                    }
+                }
+                ,
+                error: function () {
+                    layer.closeAll('loading'); //关闭loading
+                    layer.msg('请求不到url，上传失败。', {icon: 5});
+                }
+            });
+        });
+    </script>
+</body>
+</html>

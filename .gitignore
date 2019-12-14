@@ -1,0 +1,5 @@
+##ignore this file##
+/venv/
+.idea
+db.sqlite3
+ 
