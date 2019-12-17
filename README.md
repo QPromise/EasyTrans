@@ -1,7 +1,7 @@
 # EasyTrans
 
 ## 2019.12.14说明
-* 由于之前[PyMupDF](https://github.com/pymupdf/PyMuPDF)包更新到1.16.9版本，函数进行了改动造成了程序运行错误，未及时跟进更新给各位带来的不变深感抱歉，当前已进行修复。
+* 由于之前[PyMupDF](https://github.com/pymupdf/PyMuPDF)包更新到1.16.9版本，函数进行了改动造成了程序运行错误，未及时跟进更新给各位带来的不便深感抱歉，当前已进行修复。
 * 必应翻译接口现在已不能使用，新增百度翻译接口，需要换成自己的API，申请点[这里](http://api.fanyi.baidu.com/api/trans)
 ## 目的
 
