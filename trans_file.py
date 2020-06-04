@@ -23,8 +23,8 @@ from docx.oxml.ns import qn
 import sys
 from trans import translate_func
 
-root = sys.argv[0][0:sys.argv[0].find(':')+1]
-print('当前文件所在盘符:',root)
+root = os.path.abspath(os.path.join(os.getcwd(), ".."))
+print('当前项目所在父目录:',root)
 
 
 # 正则匹配参考文献
@@ -64,7 +64,7 @@ try:
             #print('当前页面的图像:::', pix_temp)
             imgcount += 1
             new_name = "图片{}.png".format(imgcount)  # 生成图片的名称
-            pix_temp.writeImage(os.path.join(root,'\EasyTrans', 'trans', 'output_file', new_name))
+            pix_temp.writeImage(os.path.join(root,'EasyTrans', 'trans', 'output_file', new_name))
             # bytes_array = pix_temp.getImageData('png')#可以不输出图片再写入新的pdf，通过byte
             # print(pix_temp.getImageData('png'))
             pix_temp = None  # 释放资源
@@ -95,7 +95,7 @@ try:
 
                 img_r = blks[num][:4]  # 图片要放置位置的坐标
                 try:
-                    path_img = os.path.join(root,'\EasyTrans', 'trans', 'output_file',
+                    path_img = os.path.join(root,'EasyTrans', 'trans', 'output_file',
                                         '图片{}.png'.format(imgcount))  # 当前页面第几个图片的位置
                     img = open(path_img, "rb").read()  # 输入流
                     new_page.insertImage(img_r, stream=img, keep_proportion=True)  # 输入到新的pdf页面对应位置
@@ -137,7 +137,7 @@ try:
                     if reference_flag == 1:
                         trans_pragraph = blks[num][4].replace("\n", " ")
                         res = translate_func.google_translate(trans_pragraph).replace(' ', '')
-                        new_page.insertTextbox(r, res, fontname="song", fontfile=os.path.join(root,'\EasyTrans',
+                        new_page.insertTextbox(r, res, fontname="song", fontfile=os.path.join(root,'EasyTrans',
                                                                                               'trans/static/fonts/SimSun.ttf'),
                                                fontsize=7, align=text_pos)  #
                     # 其它情况
@@ -159,12 +159,12 @@ try:
                         # fitz.Rect(end[0],begin[1],end[2],end[3])为新扩展的矩形框坐标
                         if begin[2] > end[2]:  # 如果起始点的右下角x坐标小于结束点的右下角x坐标
                             new_page.insertTextbox(fitz.Rect(end[0], begin[1], begin[2], end[3]), res, fontname="song",
-                                                fontfile=os.path.join(root,'\EasyTrans',
+                                                fontfile=os.path.join(root,'EasyTrans',
                                                                       'trans/static/fonts/SimSun.ttf'),
                                                 fontsize=fonts, align=text_pos)
                         else:
                             new_page.insertTextbox(fitz.Rect(end[0], begin[1], end[2], end[3]), res, fontname="song",
-                                                fontfile=os.path.join(root,'\EasyTrans',
+                                                fontfile=os.path.join(root,'EasyTrans',
                                                                       'trans/static/fonts/SimSun.ttf'),
                                                 fontsize=fonts, align=text_pos)
                         flag = 0
@@ -173,13 +173,13 @@ try:
                         trans_pragraph = blks[num][4].replace("\n", " ")  # 将待翻译的句子换行换成空格
                         if is_figure(trans_pragraph.replace(' ','')):  # 将该块的判断是否是图片标注
                             res = translate_func.google_translate(trans_pragraph).replace(' ', '')  # 翻译结果去掉汉字中的空格
-                            new_page.insertTextbox(r, res, fontname="song", fontfile=os.path.join(root,'\EasyTrans',
+                            new_page.insertTextbox(r, res, fontname="song", fontfile=os.path.join(root,'EasyTrans',
                                                                                                'trans/static/fonts/SimSun.ttf'),
                                                 fontsize=7, align=fitz.TEXT_ALIGN_CENTER)
                         # 标记在这里之后的都是参考文献
                         elif is_reference(trans_pragraph.replace(' ','')):
                             reference_flag = 1
-                            new_page.insertTextbox(r, '参考文献', fontname="song", fontfile=os.path.join(root,'\EasyTrans',
+                            new_page.insertTextbox(r, '参考文献', fontname="song", fontfile=os.path.join(root,'EasyTrans',
                                                                                                'trans/static/fonts/SimSun.ttf'),
                                                 fontsize=fonts, align=text_pos)
                         else:
@@ -188,12 +188,12 @@ try:
                             # 添加到新的docx文档中
                             new_docx.add_paragraph(res)
                             if reference_flag == 1:
-                                new_page.insertTextbox(r, res, fontname="song", fontfile=os.path.join(root,'\EasyTrans',
+                                new_page.insertTextbox(r, res, fontname="song", fontfile=os.path.join(root,'EasyTrans',
                                                                                                       'trans/static/fonts/SimSun.ttf'),
                                                        fontsize=7, align=text_pos)  #
                             else:
 
-                                new_page.insertTextbox(r, res, fontname="song", fontfile=os.path.join(root,'\EasyTrans',
+                                new_page.insertTextbox(r, res, fontname="song", fontfile=os.path.join(root,'EasyTrans',
                                                                                                'trans/static/fonts/SimSun.ttf'),
                                                 fontsize=fonts, align=text_pos)  #
                     # 记录起始矩形坐标
@@ -209,9 +209,9 @@ try:
         i += 1
 except:
     print('翻译过程出现异常......')
-    new_file_name = os.path.join(root,'\EasyTrans', 'trans', 'output_file', 'translated_' + file_name)  # 翻译后的pdf保存路径
+    new_file_name = os.path.join(root,'EasyTrans', 'trans', 'output_file', 'translated_' + file_name)  # 翻译后的pdf保存路径
     print(new_file_name)
-    new_docx_name = os.path.join(root,'\EasyTrans', 'trans', 'output_file',
+    new_docx_name = os.path.join(root,'EasyTrans', 'trans', 'output_file',
                                  'translated_' + file_name[:-4] + '.docx')  # 翻译后的docx保存路径
     new_docx.save(new_docx_name)  # 保存翻译后的docx
     new_pdf.save(new_file_name, garbage=4, deflate=True, clean=True)  # 保存翻译后的pdf
@@ -219,13 +219,13 @@ except:
     print("Total translation time: %g sec" % (t1 - t0))
 
 # 文件保存
-new_file_name = os.path.join(root,'\EasyTrans', 'trans', 'output_file', 'translated_' + file_name)  # 翻译后的pdf保存路径
+new_file_name = os.path.join(root,'EasyTrans', 'trans', 'output_file', 'translated_' + file_name)  # 翻译后的pdf保存路径
 if os._exists(new_file_name):
     try:
         os.remove(new_file_name)
     except:
         print('删除已有的文件失败，请先关闭该文件然后重新翻译！')
-new_docx_name = os.path.join(root,'\EasyTrans', 'trans', 'output_file',
+new_docx_name = os.path.join(root,'EasyTrans', 'trans', 'output_file',
                              'translated_' + file_name[:-4] + '.docx')  # 翻译后的docx保存路径
 if os._exists(new_docx_name):
     try:
