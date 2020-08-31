@@ -16,11 +16,12 @@
 import urllib.request
 import urllib.parse
 import json
-import requests   # pip intasll requests
+import requests  # pip intasll requests
 import execjs  # 安装指令：pip install PyExecJS
 import random
 import hashlib
 
+from googletrans import Translator
 
 
 class Py4Js():
@@ -66,75 +67,67 @@ class Py4Js():
         return a 
     } 
     """)
+
     def getTk(self, text):
         return self.ctx.call("TL", text)
+
 
 # 有道翻译方法，不支持一次翻译一大段文字
 def youdao_translate(content):
     '''实现有道翻译的接口'''
     url = 'http://fanyi.youdao.com/translate?smartresult=dict&smartresult=rule&sessionFrom=https://www.baidu.com/link'
     data = {
-        'from':'AUTO',
-        'to':'AUTO',
-        'smartresult':'dict',
-        'client':'fanyideskweb',
-        'salt':'1500092479607',
-        'sign':'d9f9a3aa0a7b34241b3fe30505e5d436',
-        'doctype':'json',
-        'version':'2.1',
-        'keyfrom':'fanyi.web',
-        'action':'FY_BY_CL1CKBUTTON',
-        'typoResult':'true'}
-    data['i'] = content.replace('\n','')
+        'from': 'AUTO',
+        'to': 'AUTO',
+        'smartresult': 'dict',
+        'client': 'fanyideskweb',
+        'salt': '1500092479607',
+        'sign': 'd9f9a3aa0a7b34241b3fe30505e5d436',
+        'doctype': 'json',
+        'version': '2.1',
+        'keyfrom': 'fanyi.web',
+        'action': 'FY_BY_CL1CKBUTTON',
+        'typoResult': 'true'}
+    data['i'] = content.replace('\n', '')
     data = urllib.parse.urlencode(data).encode('utf-8')
-    wy = urllib.request.urlopen(url,data)
+    wy = urllib.request.urlopen(url, data)
     html = wy.read().decode('utf-8')
     ta = json.loads(html)
     res = ta['translateResult'][0][0]['tgt']
     return res
 
+
 # 谷歌翻译方法
 def google_translate(content):
     '''实现谷歌的翻译'''
-
-    content = content.replace('\n','')
-    print(content)
-    js = Py4Js()
-    tk = js.getTk(content)
-    if len(content) > 4891:
-        return '输入请不要超过4891个字符！'
-    param = {'tk': tk, 'q': content}
-    result = requests.get("""http://translate.google.cn/translate_a/single?client=t&sl=en 
-        &tl=zh-CN&hl=zh-CN&dt=at&dt=bd&dt=ex&dt=ld&dt=md&dt=qca&dt=rw&dt=rm&dt=ss 
-        &dt=t&ie=UTF-8&oe=UTF-8&clearbtn=1&otf=1&pc=1&srcrom=0&ssel=0&tsel=0&kc=2""", params=param)
-    #返回的结果为Json，解析为一个嵌套列表  
-    trans = result.json()[0]
-    res = ''
-    for i in range(len(trans)):
-        line = trans[i][0]
-        if line != None:
-            res += trans[i][0]
+    content = content.replace('\n', '')
+    trans = Translator(service_urls=["translate.google.cn"])
+    res = trans.translate(content, dest='zh-cn').text
 
     return res
 
 
-def is_Chinese(content):       #判断输入的内容是否是中文
+def is_Chinese(content):  # 判断输入的内容是否是中文
     for ch in content:
         if '\u4e00' <= ch <= '\u9fff':
             return True
         else:
             return False
 
+
 # 必应翻译方法已废弃
-def bing_translate(content): # 尽量保证翻译内容既有中文也有英文的情况，判断没考虑此情况。
+def bing_translate(content):  # 尽量保证翻译内容既有中文也有英文的情况，判断没考虑此情况。
     if len(content) > 4891:
         return '输入请不要超过4891个字符！'
     url = 'https://www.bing.com/ttranslatev3?isVertical=1&&IG=0AF741D4794D421EB417BC51A62B9934&IID=translator.5026.4'
     if is_Chinese(content):
-        res = requests.post(url, data={'text':content.replace('\n',''), 'from': 'zh-CHS', 'to': "en", 'doctype': 'json'}).json()['translationResponse']
+        res = requests.post(url, data={'text': content.replace('\n', ''), 'from': 'zh-CHS', 'to': "en",
+                                       'doctype': 'json'}).json()['translationResponse']
     else:
-        res = requests.post(url, data={'text':content.replace('\n',''), 'from': 'en', 'to': "zh-CHS", 'doctype': 'json'}).json()['translationResponse']
+        res = requests.post(url, data={'text': content.replace('\n', ''), 'from': 'en', 'to': "zh-CHS",
+                                       'doctype': 'json'}).json()['translationResponse']
     return res
+
 
 # 百度翻译方法
 def baidu_translate(content):
@@ -143,14 +136,14 @@ def baidu_translate(content):
         return '输入请不要超过4891个字符！'
     salt = str(random.randint(0, 50))
     # 申请网站 http://api.fanyi.baidu.com/api/trans
-    appid = '20191210000364718' # 这里写你自己申请的
-    secretKey = 'e83BXpQFTnXrTy62O9MO'# 这里写你自己申请的
+    appid = '20191210000364718'  # 这里写你自己申请的
+    secretKey = 'e83BXpQFTnXrTy62O9MO'  # 这里写你自己申请的
     sign = appid + content + salt + secretKey
     sign = hashlib.md5(sign.encode(encoding='UTF-8')).hexdigest()
     head = {'q': f'{content}',
             'from': 'en',
             'to': 'zh',
-            'appid': f'{appid }',
+            'appid': f'{appid}',
             'salt': f'{salt}',
             'sign': f'{sign}'}
     j = requests.get('http://api.fanyi.baidu.com/api/trans/vip/translate', head)
