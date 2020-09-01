@@ -114,16 +114,20 @@ def is_Chinese(content):  # 判断输入的内容是否是中文
         else:
             return False
 
+
 # 必应翻译方法已废弃
-def bing_translate(content): # 尽量保证翻译内容既有中文也有英文的情况，判断没考虑此情况。
+def bing_translate(content):  # 尽量保证翻译内容既有中文也有英文的情况，判断没考虑此情况。
     if len(content) > 4891:
         return '输入请不要超过4891个字符！'
     url = 'https://www.bing.com/ttranslatev3?isVertical=1&&IG=0AF741D4794D421EB417BC51A62B9934&IID=translator.5026.4'
     if is_Chinese(content):
-        res = requests.post(url, data={'text':content.replace('\n',''), 'from': 'zh-CHS', 'to': "en", 'doctype': 'json'}).json()['translationResponse']
+        res = requests.post(url, data={'text': content.replace('\n', ''), 'from': 'zh-CHS', 'to': "en",
+                                       'doctype': 'json'}).json()['translationResponse']
     else:
-        res = requests.post(url, data={'text':content.replace('\n',''), 'from': 'en', 'to': "zh-CHS", 'doctype': 'json'}).json()['translationResponse']
+        res = requests.post(url, data={'text': content.replace('\n', ''), 'from': 'en', 'to': "zh-CHS",
+                                       'doctype': 'json'}).json()['translationResponse']
     return res
+
 
 # 百度翻译方法
 def baidu_translate(content):
@@ -132,14 +136,14 @@ def baidu_translate(content):
         return '输入请不要超过4891个字符！'
     salt = str(random.randint(0, 50))
     # 申请网站 http://api.fanyi.baidu.com/api/trans
-    appid = '20191210000364718' # 这里写你自己申请的
-    secretKey = 'e83BXpQFTnXrTy62O9MO'# 这里写你自己申请的
+    appid = '20191210000364718'  # 这里写你自己申请的
+    secretKey = 'e83BXpQFTnXrTy62O9MO'  # 这里写你自己申请的
     sign = appid + content + salt + secretKey
     sign = hashlib.md5(sign.encode(encoding='UTF-8')).hexdigest()
     head = {'q': f'{content}',
             'from': 'en',
             'to': 'zh',
-            'appid': f'{appid }',
+            'appid': f'{appid}',
             'salt': f'{salt}',
             'sign': f'{sign}'}
     j = requests.get('http://api.fanyi.baidu.com/api/trans/vip/translate', head)
