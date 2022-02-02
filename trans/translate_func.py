@@ -156,5 +156,6 @@ def baidu_translate(content):
     j = requests.get('http://api.fanyi.baidu.com/api/trans/vip/translate', head)
     print(j.json())
     res = j.json()['trans_result'][0]['dst']
+    res = re.compile('[\\x00-\\x08\\x0b-\\x0c\\x0e-\\x1f]').sub(' ', res)
     print(res)
-    return str(res)
+    return res
