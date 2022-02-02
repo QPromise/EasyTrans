@@ -20,6 +20,7 @@ import requests   # pip intasll requests
 import execjs  # 安装指令：pip install PyExecJS
 import random
 import hashlib
+import re
 
 
 
