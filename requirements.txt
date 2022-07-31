@@ -25,5 +25,5 @@ requests==2.21.0
 six==1.12.0
 sqlparse==0.3.0
 tzlocal==1.5.1
-urllib3==1.24.3
+urllib3==1.26.5
 wcwidth==0.1.7
