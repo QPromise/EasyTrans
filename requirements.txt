@@ -17,7 +17,7 @@ py==1.8.0
 PyExecJS==1.5.1
 pyjsparser==2.7.1
 PyMuPDF==1.16.9
-PyPDF2==1.26.0
+PyPDF2==1.27.5
 pytest==4.5.0
 python-docx==0.8.10
 pytz==2019.1
