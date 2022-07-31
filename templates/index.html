@@ -4,14 +4,14 @@
 <head>
     <meta charset="utf-8" http-equiv="Access-Control-Allow-Origin">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>EasyTrans</title>
+    <title>QuickTrans</title>
     <link rel="shortcut icon" type="image/x-icon" href="{% static 'images/title.ico' %}"/>
     <link rel="stylesheet" href="{% static 'layui/css/layui.css' %}">
 </head>
 <body class="layui-layout-body">
 <div class="layui-layout layui-layout-admin">
     <div class="layui-header">
-        <div class="layui-logo" style="font-size: xx-large;font-family: Arial;">EasyTrans</div>
+        <div class="layui-logo" style="font-size: xx-large;font-family: Arial;">QuickTrans</div>
         <!-- 头部区域（可配合layui已有的水平导航） -->
         <ul class="layui-nav layui-layout-left">
             <li class="layui-nav-item"><a href="#">本站公告</a></li>
@@ -222,7 +222,7 @@
         layui.use(['layer', 'form'], function () {
             var layer = layui.layer
                 , form = layui.form;
-            layer.msg('Welcome to EasyTrans!');//进入主页面的显示
+            layer.msg('Welcome to QuickTrans!');//进入主页面的显示
         });
         //上传文件到后台,包括上传成功后的预览,翻译,删除,翻译完成后可以进行查看以及下载。
         var demoListView = $('#test-upload-demoList');
